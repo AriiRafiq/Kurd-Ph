@@ -66,14 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "Domperidone": ["5 mg/5 ml"]
     };
 
-    function populateMedicationList() {
-        Object.keys(medicationValues).forEach(medication => {
-            const option = document.createElement('option');
-            option.value = medication;
-            option.textContent = medication;
-            medicationList.appendChild(option);
-        });
-    }
+    medicationList.addEventListener('focus', () => {
+        if (medicationList.options.length === 0) {
+            Object.keys(medicationValues).forEach(medication => {
+                const option = document.createElement('option');
+                option.value = medication;
+                option.textContent = medication;
+                medicationList.appendChild(option);
+            });
+        }
+    });
 
     medicationList.addEventListener('change', () => {
         doseList.innerHTML = '';
@@ -137,6 +139,4 @@ document.addEventListener('DOMContentLoaded', () => {
             resultLabel1.textContent = 'Invalid dose format!';
         }
     });
-
-    populateMedicationList();
 });
