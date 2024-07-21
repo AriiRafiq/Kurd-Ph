@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     const ageBox = document.getElementById('ageBox');
     const weightBox = document.getElementById('weightBox');
@@ -99,6 +98,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const weight = (age * 2) + 8;
             weightBox.value = weight;
             resultLabel.textContent = `${weight} Kg`;
+        }
+    });
+
+    ageBox.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            calculateButton.click();
         }
     });
 
