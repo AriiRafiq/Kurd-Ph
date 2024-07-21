@@ -13,24 +13,25 @@
 </head>
 <body>
     <div class="container">
+        <h1>Syrup Dose Calculator</h1>
         <div class="group-box" id="patient-info">
             <h2>Patient Information</h2>
             <label for="ageBox">Age</label>
-            <input type="text" id="ageBox" placeholder="Age">
-            <label id="resultLabel"></label>
+            <input type="number" id="ageBox" placeholder="Enter age">
             <button id="calculateButton">Calculate Weight</button>
+            <label id="resultLabel"></label>
             <label for="weightBox">Patient's Weight</label>
-            <input type="text" id="weightBox" placeholder="Weight">
+            <input type="text" id="weightBox" placeholder="Weight" readonly>
         </div>
         <div class="group-box" id="syrup-dose">
             <h2>Syrup Dose</h2>
             <label for="medicationList">Medication</label>
             <select id="medicationList">
-                <option value="" selected disabled hidden></option>
+                <option value="" selected disabled hidden>Select Medication</option>
             </select>
             <label for="doseList">Dose</label>
             <select id="doseList">
-                <option value="" selected disabled hidden></option>
+                <option value="" selected disabled hidden>Select Dose</option>
             </select>
             <button id="calculateButton1">Calculate Dose</button>
             <label id="resultLabel1"></label>
