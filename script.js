@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     medicationList.addEventListener('focus', () => {
-        if (medicationList.options.length === 0) {
+        if (medicationList.options.length === 1) { // Only the initial empty option exists
             Object.keys(medicationValues).forEach(medication => {
                 const option = document.createElement('option');
                 option.value = medication;
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     medicationList.addEventListener('change', () => {
-        doseList.innerHTML = '';
+        doseList.innerHTML = '<option value="" selected disabled hidden></option>'; // Reset doseList
         resultLabel1.textContent = '';
         frequencyLabel.textContent = '';
         const selectedMedication = medicationList.value;
