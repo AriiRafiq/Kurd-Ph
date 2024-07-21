@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const calculateButton1 = document.getElementById('calculateButton1');
     const resultLabel1 = document.getElementById('resultLabel1');
     const frequencyLabel = document.getElementById('frequencyLabel');
+    const disclaimerIcon = document.getElementById('disclaimerIcon');
+    const disclaimerModal = document.getElementById('disclaimerModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
 
     const medicationValues = {
         "Paracetamol": 12.5,
@@ -139,23 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resultLabel1.textContent = 'Invalid dose format!';
         }
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const ageBox = document.getElementById('ageBox');
-    const weightBox = document.getElementById('weightBox');
-    const calculateButton = document.getElementById('calculateButton');
-    const resultLabel = document.getElementById('resultLabel');
-    const medicationList = document.getElementById('medicationList');
-    const doseList = document.getElementById('doseList');
-    const calculateButton1 = document.getElementById('calculateButton1');
-    const resultLabel1 = document.getElementById('resultLabel1');
-    const frequencyLabel = document.getElementById('frequencyLabel');
-    const disclaimerIcon = document.getElementById('disclaimerIcon');
-    const disclaimerModal = document.getElementById('disclaimerModal');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-
-    // Your existing code for calculations
 
     disclaimerIcon.addEventListener('click', () => {
         disclaimerModal.style.display = 'flex';
