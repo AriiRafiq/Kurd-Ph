@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             const weight = (age * 2) + 8;
             weightBox.value = weight;
-            resultLabel.textContent = `${weight} Kg`;
+            resultLabel.textContent = `Weight: ${weight} Kg`;
         }
     });
 
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const [doseMg, doseMl] = selectedDose.split(' mg/').map(d => parseFloat(d));
             const medicationValue = medicationValues[selectedMedication];
             const result = (weight * medicationValue) / doseMg * doseMl;
-            resultLabel1.textContent = `${result.toFixed(2)} ml`;
+            resultLabel1.textContent = `Dose: ${result.toFixed(2)} ml`;
             frequencyLabel.textContent = `Frequency: ${medicationFrequencies[selectedMedication]}`;
         } catch (error) {
             resultLabel1.textContent = 'Invalid dose format!';
