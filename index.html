@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syrup Dose Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="group-box" id="patient-info">
+            <h2>Patient Information</h2>
+            <label for="ageBox">Age</label>
+            <input type="text" id="ageBox" placeholder="Age">
+            <label for="weightBox">Patient's Weight</label>
+            <input type="text" id="weightBox" placeholder="Weight">
+            <button id="calculateButton">Calculate Weight</button>
+            <label id="resultLabel"></label>
+        </div>
+        <div class="group-box" id="syrup-dose">
+            <h2>Syrup Dose</h2>
+            <label for="medicationList">Medication</label>
+            <select id="medicationList"></select>
+            <label for="doseList">Dose</label>
+            <select id="doseList"></select>
+            <button id="calculateButton1">Calculate Dose</button>
+            <label id="resultLabel1"></label>
+            <label id="frequencyLabel"></label>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
