@@ -219,7 +219,6 @@ footer a:hover {
         width: 32px;
         height: 32px;
         cursor: pointer;
-        z-index: 1001; /* Ensure it's above other elements */
     }
 
     .modal {
@@ -232,7 +231,6 @@ footer a:hover {
         background: rgba(0, 0, 0, 0.5);
         justify-content: center;
         align-items: center;
-        z-index: 1000;
     }
 
     .modal-content {
