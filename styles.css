@@ -4,7 +4,6 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
 	background: transparent;
     overflow: hidden;
@@ -147,49 +146,6 @@ select {
     box-sizing: border-box;
 }
 
-/* CSS for notification */
-.notification {
-    position: fixed;
-    top: -100px; /* Start position above the viewport */
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    color: #fff;
-    padding: 15px 40px;
-    border-radius: 8px;
-    font-size: 18px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    transition: top 0.5s ease; /* Smooth transition for sliding effect */
-        backdrop-filter: blur(3px); /* Apply the blur effect */
-
-}
-
-/* Animation for the notification */
-@keyframes slideDownUp {
-    0% {
-        top: -100px;
-    }
-    20% {
-        top: 20px; /* Position the notification slightly below the top */
-    }
-    80% {
-        top: 20px; /* Keep it visible for a moment */
-    }
-    100% {
-        top: -100px;
-    }
-}
-
-.notification.show {
-    animation: slideDownUp 3s ease; /* Apply the sliding animation */
-}
-
-
-body {
-    animation: fadeInFromTop 2s ease-out;
-}
 
 footer {
     bottom: 0;
