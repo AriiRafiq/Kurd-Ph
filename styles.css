@@ -11,7 +11,7 @@ body, html {
 }
 
 .stars {
-    position: absolute;
+    position: fixed;
     top: 1;
     left: 1;
     width: 100%; /* Cover the viewport width */
