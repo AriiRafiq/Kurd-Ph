@@ -16,6 +16,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 0; /* Ensure it is behind the container but above the background */
 }
 
 .container {
@@ -35,13 +36,13 @@ body, html {
 
 
 .background {
-    position: absolute;
+    position: fixed; /* Use fixed positioning */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     background: linear-gradient(135deg, #36051b 0%, #200536 50%, #0b1321 100%);
-       z-index: 0;
- 
+    z-index: -1; /* Ensure it is behind other content */
 }
 
 h1 {
