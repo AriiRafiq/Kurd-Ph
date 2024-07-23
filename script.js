@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 doseList.appendChild(option);
             });
         }
+		addBounceAnimation(doseList);
     });
 
     calculateButton.addEventListener('click', () => {
@@ -104,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             weightBox.value = weight;
             resultLabel.textContent = `Weight: ${weight} Kg`;
         }
+		addBounceAnimation(medicationList);
     });
 
     ageBox.addEventListener('keypress', (e) => {
@@ -152,3 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
         disclaimerModal.style.display = 'none';
     });
 });
+
+function addBounceAnimation(element) {
+    element.classList.add('bounce');
+    element.addEventListener('animationend', function() {
+        element.classList.remove('bounce');
+    }, { once: true });
+}
