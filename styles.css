@@ -213,7 +213,7 @@ footer a:hover {
 <style>
 /* Add styles for the disclaimer icon and modal */
     .disclaimer-icon {
-        position: fixed;
+        position: absolute;
         top: 20px;
         right: 20px;
         width: 32px;
