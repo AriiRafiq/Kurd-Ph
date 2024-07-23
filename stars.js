@@ -1,14 +1,21 @@
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
 document.querySelector('.stars').appendChild(canvas);
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas(); // Initial resize
 
 let stars = [];
-let numStars = 100;
+const numStars = 100;
 const starSpeed = 0.7;
 
 function initStars() {
+    stars = [];
     for (let i = 0; i < numStars; i++) {
         stars.push({
             x: Math.random() * canvas.width,
