@@ -121,8 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!selectedMedication) {
             resultLabel1.textContent = 'Please select a medication!';
-            return;
             addBounceAnimation(medicationList);
+            return;
         }
 
         if (!selectedDose) {
