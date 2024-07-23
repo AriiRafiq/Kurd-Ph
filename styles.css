@@ -12,8 +12,6 @@ body, html {
 
 .stars {
     position: absolute;
-    top: 1;
-    left: 5;
     width: 100%; /* Cover the viewport width */
     height: 100%; /* Cover the viewport height */
     z-index: 0; /* Ensure it's behind the container */
