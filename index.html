@@ -76,10 +76,14 @@
             <button class="close-btn" id="closeModalBtn">Close</button>
         </div>
     </div>
+	
+    <div class="background">
+        <div class="stars"><canvas width="1488" height="708"></canvas></div>
+    </div>
 
     <div class="container">
         <h1>Syrup Dose Calculator</h1>
-        <div class="group-box" id="patient-info">
+
             <h2>Patient Information</h2>
             <label for="ageBox">Age</label>
             <input type="number" inputmode="numeric" id="ageBox" placeholder="Enter age">
@@ -87,8 +91,7 @@
             <label id="resultLabel"></label>
             <label for="weightBox">Patient's Weight</label>
             <input type="number" inputmode="numeric" id="weightBox" placeholder="Enter weight">
-        </div>
-        <div class="group-box" id="syrup-dose">
+
             <h2>Syrup Dose</h2>
             <label for="medicationList">Medication</label>
             <select id="medicationList">
@@ -101,8 +104,10 @@
             <button id="calculateButton1">Calculate Dose</button>
             <label id="resultLabel1"></label>
             <label id="frequencyLabel"></label>
+			<footer> <p>2024 - © All rights reserved to the developer <a href="https://t.me/AriRafiq" target="_blank">Ari</a> </p>    </footer>
         </div>
-    </div>
+		
+    <script src="stars.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
