@@ -210,9 +210,8 @@ footer a:hover {
 }
 
 
-<style>
 /* Add styles for the disclaimer icon and modal */
-    .disclaimer-icon {
+.disclaimer-icon {
         position: absolute;
         top: 20px;
         left: 20px;
@@ -221,7 +220,7 @@ footer a:hover {
         cursor: pointer;
     }
 
-    .modal {
+.modal {
         display: none;
         position: fixed;
         top: 0;
@@ -234,7 +233,7 @@ footer a:hover {
         z-index: 1000;
     }
 
-    .modal-content {
+.modal-content {
         background: #fff;
         padding: 20px;
         border-radius: 8px;
@@ -243,12 +242,12 @@ footer a:hover {
         position: relative;
     }
 
-    .modal-content p {
+.modal-content p {
         margin: 0 0 20px 0;
         color: #333;
     }
 
-    .close-btn {
+.close-btn {
         background: #007BFF;
         color: #fff;
         border: none;
@@ -260,7 +259,6 @@ footer a:hover {
         font-size: 16px;
     }
 
-    .close-btn:hover {
+.close-btn:hover {
         background: #0056b3;
     }
-</style>
