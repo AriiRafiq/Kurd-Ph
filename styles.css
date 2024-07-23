@@ -14,10 +14,12 @@ body, html {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0; /* Ensure it is behind the container but above the background */
+    width: 100vw; /* Cover the viewport width */
+    height: 100vh; /* Cover the viewport height */
+    z-index: 0; /* Ensure it's behind the container */
+    pointer-events: none; /* Prevent it from interfering with other elements */
 }
+
 
 .container {
     position: relative;
