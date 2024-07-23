@@ -11,9 +11,11 @@ body, html {
 }
 
 .stars {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover the viewport width */
+    height: 100%; /* Cover the viewport height */
     z-index: 0; /* Ensure it's behind the container */
     pointer-events: none; /* Prevent it from interfering with other elements */
 }
@@ -36,7 +38,9 @@ body, html {
 
 
 .background {
-    position: absolute;
+    position: fixed; /* Use fixed positioning */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, #36051b 0%, #200536 50%, #0b1321 100%);
