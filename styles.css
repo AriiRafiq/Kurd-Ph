@@ -10,11 +10,11 @@ body, html {
 }
 
 .stars {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Cover the viewport width */
-    height: 100vh; /* Cover the viewport height */
+    width: 100%; /* Cover the viewport width */
+    height: 100%; /* Cover the viewport height */
     z-index: 0; /* Ensure it's behind the container */
     pointer-events: none; /* Prevent it from interfering with other elements */
 }
