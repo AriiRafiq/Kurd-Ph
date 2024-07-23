@@ -146,13 +146,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    disclaimerIcon.addEventListener('click', () => {
-        disclaimerModal.style.display = 'flex';
-    });
+disclaimerIcon.addEventListener('click', () => {
+	disclaimerModal.style.display = 'flex'; // Make sure it's shown
+});
 
-    closeModalBtn.addEventListener('click', () => {
-        disclaimerModal.style.display = 'none';
-    });
+closeModalBtn.addEventListener('click', () => {
+	disclaimerModal.style.display = 'none'; // Hide the modal
+});
 });
 
 function addBounceAnimation(element) {
