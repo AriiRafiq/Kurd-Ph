@@ -151,13 +151,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-disclaimerIcon.addEventListener('click', () => {
-	disclaimerModal.style.display = 'flex'; // Make sure it's shown
-});
+	disclaimerIcon.addEventListener('click', () => {
+		disclaimerModal.style.display = 'flex'; // Make sure it's shown
+	});
 
-closeModalBtn.addEventListener('click', () => {
-	disclaimerModal.style.display = 'none'; // Hide the modal
-});
+	closeModalBtn.addEventListener('click', () => {
+		disclaimerModal.style.display = 'none'; // Hide the modal
+	});
+
+    // Add event listener to close the modal when clicking outside of it
+   	 window.addEventListener('click', (event) => {
+      	  if (event.target === disclaimerModal) {
+           	 disclaimerModal.style.display = 'none';
+       		 }
+  	  });
 
      // Settings icon
 
@@ -174,7 +181,7 @@ closeModalBtn.addEventListener('click', () => {
         saveMedicationSettings();
         settingsModal.style.display = 'none';
     });
-
+	
 	// Add event listener to close the modal when clicking outside of it
     window.addEventListener('click', (event) => {
         if (event.target === settingsModal) {
