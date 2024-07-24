@@ -154,11 +154,11 @@ closeModalBtn.addEventListener('click', () => {
 	disclaimerModal.style.display = 'none'; // Hide the modal
 });
 
-});
-
 function addBounceAnimation(element) {
     element.classList.add('bounce');
     element.addEventListener('animationend', function() {
         element.classList.remove('bounce');
     }, { once: true });
 }
+
+});
