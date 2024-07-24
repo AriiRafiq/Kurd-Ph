@@ -175,6 +175,13 @@ closeModalBtn.addEventListener('click', () => {
         settingsModal.style.display = 'none';
     });
 
+	// Add event listener to close the modal when clicking outside of it
+    window.addEventListener('click', (event) => {
+        if (event.target === settingsModal) {
+            settingsModal.style.display = 'none';
+        }
+    });
+
     function loadMedicationSettings() {
         medicationSettings.innerHTML = `
             <div class="medication-header">
