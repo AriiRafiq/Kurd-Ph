@@ -105,12 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const age = parseInt(ageBox.value);
         if (isNaN(age)) {
             resultLabel.textContent = 'Invalid age input!';
+			addBounceAnimation(ageBox);
         } else {
             const weight = (age * 2) + 8;
             weightBox.value = weight;
             resultLabel.textContent = `Weight: ${weight} Kg`;
+			addBounceAnimation(medicationList);
         }
-		addBounceAnimation(medicationList);
     });
 
     ageBox.addEventListener('keypress', (e) => {
@@ -126,16 +127,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!selectedMedication) {
             resultLabel1.textContent = 'Please select a medication!';
+			addBounceAnimation(medicationList);
             return;
         }
 
         if (!selectedDose) {
             resultLabel1.textContent = 'Please select a dose!';
+			addBounceAnimation(doseList);
             return;
         }
 
         if (isNaN(weight)) {
             resultLabel1.textContent = 'Please enter a valid weight!';
+			addBounceAnimation(weightBox);
             return;
         }
 
