@@ -171,10 +171,10 @@ footer a:hover {
 /* Add styles for the disclaimer icon and modal */
 .disclaimer-icon {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 32px;
-    height: 32px;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
 }
 
@@ -224,8 +224,8 @@ footer a:hover {
 /* Settings Icon */
 .settings-icon {
     position: fixed;
-    top: 20px;
-    left: 20px; /* Adjust as needed */
+    top: 10px;
+    left: 10px; /* Adjust as needed */
     width: 20px;
     height: 20px;
     cursor: pointer;
