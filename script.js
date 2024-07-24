@@ -153,6 +153,13 @@ disclaimerIcon.addEventListener('click', () => {
 closeModalBtn.addEventListener('click', () => {
 	disclaimerModal.style.display = 'none'; // Hide the modal
 });
+    // Close modal when clicking outside of it
+document.addEventListener('click', (event) => {
+    if (disclaimerModal.style.display === 'flex' && !disclaimerModal.contains(event.target) && !disclaimerIcon.contains(event.target)) {
+        disclaimerModal.style.display = 'none';
+    }
+});
+
 });
 
 function addBounceAnimation(element) {
