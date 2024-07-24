@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeSettingsModalBtn = document.getElementById('closeSettingsModalBtn');
     const saveSettingsBtn = document.getElementById('saveSettingsBtn');
     const medicationSettings = document.getElementById('medicationSettings');
+	const defaultValuesBtn = document.getElementById('defaultValuesBtn');
 
     const medicationValues = {
         "Paracetamol": 12.5,
@@ -73,6 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
         "Ondansetron": ["4 mg/5 ml"],
         "Domperidone": ["5 mg/5 ml"]
     };
+	
+	const savedMedicationValues = localStorage.getItem('medicationValues');
+	if (savedMedicationValues) {
+        Object.assign(medicationValues, JSON.parse(savedMedicationValues));
+        console.log('Loaded medication values from localStorage:', medicationValues);
+    }
 
     medicationList.addEventListener('focus', () => {
         if (medicationList.options.length === 1) { // Only the initial empty option exists
@@ -220,7 +227,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 medicationValues[medication] = value;
             }
         });
-        console.log('Medication values saved:', medicationValues);
+        localStorage.setItem('medicationValues', JSON.stringify(medicationValues));
+		console.log('Medication values saved:', medicationValues);
+    }
+
+    defaultValuesBtn.addEventListener('click', () => {
+        resetMedicationValuesToDefault();
+    });
+
+    function resetMedicationValuesToDefault() {
+        const defaultMedicationValues = {
+            "Paracetamol": 12.5,
+            "Ibuprofen": 8.0,
+            "Mefenamic Acid": 8.0,
+            "Amoxicillin": 17.0,
+            "Amoxiclav": 25.0,
+            "Azithromycin": 12.0,
+            "Metronidazole": 7.5,
+            "Cefixime": 8.0,
+            "Cefdinir": 7.0,
+            "Cefalexin": 12.5,
+            "Nitrofurantoin": 1.0,
+            "Bactrim": 12.0,
+            "Cefpodoxime": 10.0,
+            "Hyoscine": 0.5,
+            "Ondansetron": 0.15,
+            "Domperidone": 0.3
+        };
+
+        Object.assign(medicationValues, defaultMedicationValues);
+        localStorage.setItem('medicationValues', JSON.stringify(medicationValues));
+        loadMedicationSettings();
+        console.log('Medication values reset to default:', medicationValues);
     }
 
 function addBounceAnimation(element) {
