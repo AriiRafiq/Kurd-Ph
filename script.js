@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const disclaimerIcon = document.getElementById('disclaimerIcon');
     const disclaimerModal = document.getElementById('disclaimerModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
+	const settingsIcon = document.getElementById('settingsIcon');
+    const settingsModal = document.getElementById('settingsModal');
+    const closeSettingsModalBtn = document.getElementById('closeSettingsModalBtn');
+    const saveSettingsBtn = document.getElementById('saveSettingsBtn');
+    const medicationSettings = document.getElementById('medicationSettings');
 
     const medicationValues = {
         "Paracetamol": 12.5,
@@ -153,6 +158,52 @@ disclaimerIcon.addEventListener('click', () => {
 closeModalBtn.addEventListener('click', () => {
 	disclaimerModal.style.display = 'none'; // Hide the modal
 });
+
+     // Settings icon
+
+    settingsIcon.addEventListener('click', () => {
+        settingsModal.style.display = 'flex';
+        loadMedicationSettings();
+    });
+
+    closeSettingsModalBtn.addEventListener('click', () => {
+        settingsModal.style.display = 'none';
+    });
+
+    saveSettingsBtn.addEventListener('click', () => {
+        saveMedicationSettings();
+        settingsModal.style.display = 'none';
+    });
+
+    function loadMedicationSettings() {
+        medicationSettings.innerHTML = `
+            <div class="medication-header">
+                <span>Medication</span>
+                <span>Value (mg/kg)</span>
+            </div>
+        `;
+        for (let medication in medicationValues) {
+            const div = document.createElement('div');
+            div.classList.add('medication-setting');
+            div.innerHTML = `
+                <label>${medication}</label>
+                <input type="number" value="${medicationValues[medication]}" data-medication="${medication}">
+            `;
+            medicationSettings.appendChild(div);
+        }
+    }
+
+    function saveMedicationSettings() {
+        const inputs = medicationSettings.querySelectorAll('input');
+        inputs.forEach(input => {
+            const medication = input.dataset.medication;
+            const value = parseFloat(input.value);
+            if (!isNaN(value) && value > 0) {
+                medicationValues[medication] = value;
+            }
+        });
+        console.log('Medication values saved:', medicationValues);
+    }
 
 function addBounceAnimation(element) {
     element.classList.add('bounce');
