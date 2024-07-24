@@ -298,3 +298,19 @@ footer a:hover {
 .medication-setting input {
     flex: 0.5;
 }
+
+
+.default-btn {
+    background: #6e0e6c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.default-btn:hover {
+    background: #5C0E39;
+}
