@@ -175,6 +175,7 @@ footer a:hover {
     width: 20px;
     height: 20px;
     cursor: pointer;
+    z-index: 2;
 }
 
 .modal {
@@ -228,6 +229,7 @@ footer a:hover {
     width: 20px;
     height: 20px;
     cursor: pointer;
+    z-index: 2;
 }
 
 /* Settings Modal */
