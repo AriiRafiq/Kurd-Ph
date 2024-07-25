@@ -3,12 +3,12 @@ body, html {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    height: 100%;
-    margin: 0;
+    height: auto;
     background: transparent;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .stars {
