@@ -1,23 +1,23 @@
-/* General Styles */
 body, html {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: auto;
-    background: transparent;
-    overflow-y: auto;
-    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+	height: 100%;
+    margin: 0;
+	background: transparent;
+    overflow: hidden;
 }
 
 .stars {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
+    width: 100%; /* Cover the viewport width */
+    height: 100%; /* Cover the viewport height */
+    z-index: 0; /* Ensure it's behind the container */
+    pointer-events: none; /* Prevent it from interfering with other elements */
 }
+
 
 .container {
     position: relative;
@@ -30,30 +30,32 @@ body, html {
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
     margin-bottom: 16px;
-    margin-top: 16px;
+	margin-top: 16px;
     direction: ltr;
 }
 
+
 .background {
-    position: fixed;
+    position: fixed; /* Use fixed positioning */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, #36051b 0%, #200536 50%, #0b1321 100%);
-    z-index: -1;
+    z-index: -1; /* Ensure it is behind other content */
 }
 
 h1 {
     text-align: center;
     color: #fff;
     margin-bottom: 10px;
-    font-size: 20px;
+	font-size: 20px;
 }
 
 p {
-    color: white;
+  color: white;
 }
+
 
 h2 {
     color: #ff2ea4;
@@ -65,11 +67,12 @@ h2 {
     margin-top: 15px;
 }
 
+
 label {
     display: block;
     margin-top: 15px;
     color: #fff;
-    font-size: 14px;
+	font-size: 14px;
 }
 
 input, select {
@@ -131,6 +134,7 @@ button:hover {
     }
 }
 
+
 select {
     width: 100%;
     padding: 10px;
@@ -140,15 +144,17 @@ select {
     box-sizing: border-box;
 }
 
+
 footer {
     bottom: 0;
     left: 0;
     width: 100%;
+
     color: #fff;
     text-align: center;
     padding: 10px 0;
     font-size: 13px;
-    margin-top: auto;
+	margin-top: auto;
 }
 
 footer a {
@@ -160,6 +166,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
+
 /* Add styles for the disclaimer icon and modal */
 .disclaimer-icon {
     position: fixed;
@@ -168,7 +175,6 @@ footer a:hover {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    z-index: 1001; /* Ensure it's above other elements */
 }
 
 .modal {
@@ -218,11 +224,10 @@ footer a:hover {
 .settings-icon {
     position: fixed;
     top: 10px;
-    left: 10px;
+    left: 10px; /* Adjust as needed */
     width: 20px;
     height: 20px;
     cursor: pointer;
-    z-index: 1001; /* Ensure it's above other elements */
 }
 
 /* Settings Modal */
@@ -244,16 +249,16 @@ footer a:hover {
     padding: 20px;
     border-radius: 8px;
     width: 80%;
-    max-width: 400px;
-    max-height: 80%;
-    overflow-y: auto;
+    max-width: 400px; /* Adjust the width as needed */
+    max-height: 80%; /* Adjust the height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
     position: relative;
 }
 
 .modal-content h2 {
     margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 20px;
+	margin-bottom: 15px;
+	font-size: 20px;
 }
 
 .save-btn, .close-btn {
@@ -264,7 +269,7 @@ footer a:hover {
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 10px;
-    font-size: 16px;
+	font-size: 16px;
 }
 
 .save-btn:hover, .close-btn:hover {
@@ -280,8 +285,8 @@ footer a:hover {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    color: white;
-    font-weight: bold;
+	color: white;
+	font-weight: bold;
 }
 
 .medication-setting label {
@@ -292,6 +297,7 @@ footer a:hover {
 .medication-setting input {
     flex: 0.5;
 }
+
 
 .default-btn {
     background: #6e0e6c;
@@ -306,19 +312,4 @@ footer a:hover {
 
 .default-btn:hover {
     background: #5C0E39;
-}
-
-/* Mobile Specific Styles */
-@media only screen and (max-width: 600px) {
-    body, html {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        overflow: auto;
-        height: auto;
-    }
-    
-    .container {
-        width: auto;
-    }
 }
