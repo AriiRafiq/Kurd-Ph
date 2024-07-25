@@ -328,10 +328,7 @@ footer a:hover {
     
     .container {
         width: 90%;
-        margin-top: 30px;
-	margin-bottom: 30px;
-	margin-left: 30px:
-	margin-right: 30px;
+        margin: 10px 0;
     }
 
     h1 {
