@@ -313,3 +313,17 @@ footer a:hover {
 .default-btn:hover {
     background: #5C0E39;
 }
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+       body, html {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: auto;
+        height: auto;
+    	}
+    
+    .container {
+        width: auto;
+    	}
+}
