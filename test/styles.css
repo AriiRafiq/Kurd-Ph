@@ -175,7 +175,7 @@ footer a:hover {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .modal {
@@ -229,7 +229,7 @@ footer a:hover {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 /* Settings Modal */
@@ -328,4 +328,11 @@ footer a:hover {
     .container {
         width: auto;
     	}
+    
+    .disclaimer-icon, .settings-icon {
+        width: 20px;
+        height: 20px;
+        top: 10px;
+        z-index: 1001; /* Ensure they're above other elements */
+    }
 }
