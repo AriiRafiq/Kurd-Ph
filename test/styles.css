@@ -319,6 +319,6 @@ footer a:hover {
     }
     
     .container {
-        width: 80%;
+        width: auto;
     }
 }
