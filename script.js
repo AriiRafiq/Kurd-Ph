@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const ageBox = document.getElementById('ageBox');
     const weightBox = document.getElementById('weightBox');
     const calculateButton = document.getElementById('calculateButton');
-    const resultLabel = document.getElementById('resultLabel');
     const medicationList = document.getElementById('medicationList');
     const doseList = document.getElementById('doseList');
     const calculateButton1 = document.getElementById('calculateButton1');
@@ -11,12 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const disclaimerIcon = document.getElementById('disclaimerIcon');
     const disclaimerModal = document.getElementById('disclaimerModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
-    const settingsIcon = document.getElementById('settingsIcon');
+	const settingsIcon = document.getElementById('settingsIcon');
     const settingsModal = document.getElementById('settingsModal');
     const closeSettingsModalBtn = document.getElementById('closeSettingsModalBtn');
     const saveSettingsBtn = document.getElementById('saveSettingsBtn');
     const medicationSettings = document.getElementById('medicationSettings');
-    const defaultValuesBtn = document.getElementById('defaultValuesBtn');
+	const defaultValuesBtn = document.getElementById('defaultValuesBtn');
 
     const medicationValues = {
         "Paracetamol": 12.5,
@@ -111,12 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
     calculateButton.addEventListener('click', () => {
         const age = parseInt(ageBox.value);
         if (isNaN(age)) {
-            resultLabel.textContent = 'Invalid age input!';
 			addBounceAnimation(ageBox);
         } else {
             const weight = (age * 2) + 8;
             weightBox.value = weight;
-            resultLabel.textContent = `Weight: ${weight} Kg`;
 			addBounceAnimation(medicationList);
         }
     });
@@ -260,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loadMedicationSettings();
         console.log('Medication values reset to default:', medicationValues);
     }
-
+	
     title.addEventListener('click', () => {
         resetFields();
     });
@@ -268,7 +265,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function resetFields() {
         ageBox.value = '';
         weightBox.value = '';
-        resultLabel.textContent = '';
         resultLabel1.textContent = '';
         frequencyLabel.textContent = '';
         medicationList.selectedIndex = 0; // Reset to default option
