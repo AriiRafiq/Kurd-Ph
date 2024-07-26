@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const disclaimerIcon = document.getElementById('disclaimerIcon');
     const disclaimerModal = document.getElementById('disclaimerModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
-	const settingsIcon = document.getElementById('settingsIcon');
+    const settingsIcon = document.getElementById('settingsIcon');
     const settingsModal = document.getElementById('settingsModal');
     const closeSettingsModalBtn = document.getElementById('closeSettingsModalBtn');
     const saveSettingsBtn = document.getElementById('saveSettingsBtn');
     const medicationSettings = document.getElementById('medicationSettings');
-	const defaultValuesBtn = document.getElementById('defaultValuesBtn');
+    const defaultValuesBtn = document.getElementById('defaultValuesBtn');
 
     const medicationValues = {
         "Paracetamol": 12.5,
