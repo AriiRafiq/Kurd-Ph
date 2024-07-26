@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const disclaimerIcon = document.getElementById('disclaimerIcon');
     const disclaimerModal = document.getElementById('disclaimerModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
-	const settingsIcon = document.getElementById('settingsIcon');
+    const settingsIcon = document.getElementById('settingsIcon');
     const settingsModal = document.getElementById('settingsModal');
     const closeSettingsModalBtn = document.getElementById('closeSettingsModalBtn');
     const saveSettingsBtn = document.getElementById('saveSettingsBtn');
     const medicationSettings = document.getElementById('medicationSettings');
-	const defaultValuesBtn = document.getElementById('defaultValuesBtn');
+    const defaultValuesBtn = document.getElementById('defaultValuesBtn');
 
     const medicationValues = {
         "Paracetamol": 12.5,
@@ -259,6 +259,20 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('medicationValues', JSON.stringify(medicationValues));
         loadMedicationSettings();
         console.log('Medication values reset to default:', medicationValues);
+    }
+
+    title.addEventListener('click', () => {
+        resetFields();
+    });
+
+    function resetFields() {
+        ageBox.value = '';
+        weightBox.value = '';
+        resultLabel.textContent = '';
+        resultLabel1.textContent = '';
+        frequencyLabel.textContent = '';
+        medicationList.selectedIndex = 0; // Reset to default option
+        doseList.innerHTML = '<option value="" selected disabled hidden>Select Dose</option>'; // Reset dose list
     }
 
 function addBounceAnimation(element) {
