@@ -25,16 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "Amoxicillin": 17.0,
         "Amoxiclav": 25.0,
         "Azithromycin": 12.0,
-        "Metronidazole": 7.5,
-        "Cefixime": 8.0,
-        "Cefdinir": 7.0,
-        "Cefalexin": 12.5,
-        "Nitrofurantoin": 1.0,
         "Bactrim": 12.0,
+        "Cefalexin": 12.5,
+        "Cefdinir": 7.0,
+        "Cefixime": 8.0,
         "Cefpodoxime": 10.0,
+        "Metronidazole": 7.5,
+        "Nitrofurantoin": 1.0,
+        "Domperidone": 0.3,
         "Hyoscine": 0.5,
-        "Ondansetron": 0.15,
-        "Domperidone": 0.3
+        "Ondansetron": 0.15
     };
 
     const medicationFrequencies = {
@@ -44,16 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "Amoxicillin": "1*3",
         "Amoxiclav": "1*2",
         "Azithromycin": "1*1",
-        "Metronidazole": "1*3",
-        "Cefixime": "1*1",
-        "Cefdinir": "1*2",
-        "Cefalexin": "1*2",
-        "Nitrofurantoin": "1*4",
         "Bactrim": "1*2",
+        "Cefalexin": "1*2",
+        "Cefdinir": "1*2",
+        "Cefixime": "1*1",
         "Cefpodoxime": "1*2",
+        "Metronidazole": "1*3",
+        "Nitrofurantoin": "1*4",
+        "Domperidone": "1*3",
         "Hyoscine": "1*3",
-        "Ondansetron": "1*1",
-        "Domperidone": "1*3"
+        "Ondansetron": "1*1"
     };
 
     const medicationDoses = {
@@ -63,16 +63,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "Amoxicillin": ["125 mg/5 ml", "250 mg/5 ml"],
         "Amoxiclav": ["156 mg/5 ml", "200 mg/5 ml", "312 mg/5 ml", "457 mg/5 ml"],
         "Azithromycin": ["100 mg/5 ml", "200 mg/5 ml", "300 mg/7.5 ml"],
-        "Metronidazole": ["25 mg/5 ml", "125 mg/5 ml", "200 mg/5 ml"],
-        "Cefixime": ["50 mg/5 ml", "100 mg/5 ml"],
-        "Cefdinir": ["125 mg/5 ml", "250 mg/5 ml"],
-        "Cefalexin": ["125 mg/5 ml", "250 mg/5 ml"],
-        "Nitrofurantoin": ["25 mg/5 ml", "50 mg/5 ml"],
         "Bactrim": ["240 mg/5 ml", "480 mg/5 ml"],
+        "Cefalexin": ["125 mg/5 ml", "250 mg/5 ml"],
+        "Cefdinir": ["125 mg/5 ml", "250 mg/5 ml"],
+        "Cefixime": ["50 mg/5 ml", "100 mg/5 ml"],
         "Cefpodoxime": ["50 mg/5 ml", "100 mg/5 ml"],
+        "Metronidazole": ["25 mg/5 ml", "125 mg/5 ml", "200 mg/5 ml"],
+        "Nitrofurantoin": ["25 mg/5 ml", "50 mg/5 ml"],
+        "Domperidone": ["5 mg/5 ml"],
         "Hyoscine": ["5 mg/5 ml"],
-        "Ondansetron": ["4 mg/5 ml"],
-        "Domperidone": ["5 mg/5 ml"]
+        "Ondansetron": ["4 mg/5 ml"]
     };
 	
 	const savedMedicationValues = localStorage.getItem('medicationValues');
@@ -237,23 +237,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resetMedicationValuesToDefault() {
         const defaultMedicationValues = {
-            "Paracetamol": 12.5,
-            "Ibuprofen": 8.0,
-            "Mefenamic Acid": 8.0,
-            "Amoxicillin": 17.0,
-            "Amoxiclav": 25.0,
-            "Azithromycin": 12.0,
-            "Metronidazole": 7.5,
-            "Cefixime": 8.0,
-            "Cefdinir": 7.0,
-            "Cefalexin": 12.5,
-            "Nitrofurantoin": 1.0,
-            "Bactrim": 12.0,
-            "Cefpodoxime": 10.0,
-            "Hyoscine": 0.5,
-            "Ondansetron": 0.15,
-            "Domperidone": 0.3
-        };
+        "Paracetamol": 12.5,
+        "Ibuprofen": 8.0,
+        "Mefenamic Acid": 8.0,
+        "Amoxicillin": 17.0,
+        "Amoxiclav": 25.0,
+        "Azithromycin": 12.0,
+        "Bactrim": 12.0,
+        "Cefalexin": 12.5,
+        "Cefdinir": 7.0,
+        "Cefixime": 8.0,
+        "Cefpodoxime": 10.0,
+        "Metronidazole": 7.5,
+        "Nitrofurantoin": 1.0,
+        "Domperidone": 0.3,
+        "Hyoscine": 0.5,
+        "Ondansetron": 0.15
+    };
 
         Object.assign(medicationValues, defaultMedicationValues);
         localStorage.setItem('medicationValues', JSON.stringify(medicationValues));
