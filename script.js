@@ -265,7 +265,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function resetFields() {
         ageBox.value = '';
         weightBox.value = '';
-        resultLabel.textContent = '';
         resultLabel1.textContent = '';
         frequencyLabel.textContent = '';
         medicationList.selectedIndex = 0; // Reset to default option
