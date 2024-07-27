@@ -407,3 +407,8 @@ input:checked + .slider:before {
     border-radius: 8px;
     margin: 290px auto;
 }
+
+#medicationList,
+#doseList {
+    -webkit-appearance: none;
+}
