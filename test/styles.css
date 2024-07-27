@@ -403,21 +403,7 @@ input:checked + .slider:before {
     background-color: #fff;
     padding: 20px;
     width: 80%;
-    max-width: 500px;
-    border-radius: 8px;
-    margin: 20% auto;
-}
-
-#notificationModal .close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-#notificationModal .close-btn:hover,
-#notificationModal .close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+	max-width: 500px;
+	border-radius: 8px;
+	margin: 20% auto;
 }
