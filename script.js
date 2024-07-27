@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveSettingsBtn = document.getElementById('saveSettingsBtn');
     const medicationSettings = document.getElementById('medicationSettings');
     const defaultValuesBtn = document.getElementById('defaultValuesBtn');
+    const genderToggle = document.getElementById('genderToggle');
+    const genderLabel = document.getElementById('genderLabel');
+    const notificationModal = document.getElementById('notificationModal');
+    const closeNotificationBtn = document.getElementById('closeNotificationBtn');
 
     const medicationValues = {
         "Paracetamol": 12.5,
@@ -74,6 +78,52 @@ document.addEventListener('DOMContentLoaded', () => {
         "Ondansetron": ["4 mg/5 ml"]
     };
 	
+	    const femaleWeightByAge = {
+        1: 9.25,
+        2: 12.02,
+        3: 14.29,
+        4: 15.42,
+        5: 17.92,
+        6: 19.96,
+        7: 22.45,
+        8: 25.85,
+        9: 28.12,
+        10: 31.98,
+        11: 36.97,
+        12: 41.5,
+        13: 45.81,
+        14: 47.63,
+        15: 52.16,
+        16: 53.52,
+        17: 54.43,
+        18: 56.7,
+        19: 57.15,
+        20: 58.06
+    };
+	
+	    const maleWeights = {
+        1: 9.66,
+        2: 12.47,
+        3: 14.06,
+        4: 16.33,
+        5: 18.37,
+        6: 20.64,
+        7: 22.9,
+        8: 25.63,
+        9: 28.58,
+        10: 32,
+        11: 35.6,
+        12: 39.92,
+        13: 45.36,
+        14: 50.8,
+        15: 56.02,
+        16: 60.78,
+        17: 64.41,
+        18: 66.9,
+        19: 68.95,
+        20: 70.3
+    };
+	
 	const savedMedicationValues = localStorage.getItem('medicationValues');
 	if (savedMedicationValues) {
         Object.assign(medicationValues, JSON.parse(savedMedicationValues));
@@ -107,16 +157,55 @@ document.addEventListener('DOMContentLoaded', () => {
 		addBounceAnimation(doseList);
     });
 
-    calculateButton.addEventListener('click', () => {
-        const age = parseInt(ageBox.value);
-        if (isNaN(age)) {
-			addBounceAnimation(ageBox);
+    // Add event listener for the gender toggle switch
+    genderToggle.addEventListener('change', () => {
+        if (genderToggle.checked) {
+            genderLabel.textContent = 'Female';
         } else {
-            const weight = (age * 2) + 8;
-            weightBox.value = weight;
-			addBounceAnimation(medicationList);
+            genderLabel.textContent = 'Male';
         }
     });
+
+	
+	calculateButton.addEventListener('click', () => {
+		const age = Math.round(parseFloat(ageBox.value));
+		if (isNaN(age)) {
+			addBounceAnimation(ageBox);
+			return; // Exit early if age is invalid
+		} 
+
+		if (age >= 21) {
+			notificationModal.style.display = 'block'; // Show notification modal
+			addBounceAnimation(ageBox);
+			return;
+		}
+		
+		if (age >= 0 && age < 1) {
+			age = 1;
+			ageBox.value = age;
+		}
+
+		let weight;
+		if (genderToggle.checked) {
+			weight = femaleWeightByAge[age];
+		} else {
+			weight = maleWeights[age];
+		}
+		weightBox.value = weight;
+		addBounceAnimation(medicationList); // This will only be called if age is less than 21
+	});
+
+
+		    closeNotificationBtn.addEventListener('click', () => {
+        notificationModal.style.display = 'none'; // Hide notification modal
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === notificationModal) {
+            notificationModal.style.display = 'none'; // Hide notification modal if clicking outside
+        }
+    });
+
 
     ageBox.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
