@@ -389,13 +389,13 @@ input:checked + .slider:before {
 #notificationModal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 1000; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
 }
 
 #notificationModal .modal-content {
@@ -403,6 +403,8 @@ input:checked + .slider:before {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     width: 80%; /* Could be more or less, depending on screen size */
+	justify-content: center;
+    align-items: center;
 }
 
 #notificationModal .close-btn {
@@ -418,4 +420,3 @@ input:checked + .slider:before {
     text-decoration: none;
     cursor: pointer;
 }
-
