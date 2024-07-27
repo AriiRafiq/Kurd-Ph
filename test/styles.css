@@ -405,5 +405,5 @@ input:checked + .slider:before {
     width: 80%;
     max-width: 500px;
     border-radius: 8px;
-    margin: 20% auto;
+    margin: 20% 32%;
 }
