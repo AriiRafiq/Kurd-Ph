@@ -234,7 +234,7 @@ input:checked + .slider:before {
 #genderLabel {
     color: #fff;
     font-size: 14px;
-	margin-top: 15px;
+    margin-top: 15px;
 }
 
 /* Add styles for the disclaimer icon and modal */
@@ -403,7 +403,7 @@ input:checked + .slider:before {
     background-color: #fff;
     padding: 20px;
     width: 80%;
-	max-width: 500px;
-	border-radius: 8px;
-	margin: 20% auto;
+    max-width: 500px;
+    border-radius: 8px;
+    margin: 20% auto;
 }
