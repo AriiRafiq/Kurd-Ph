@@ -56,6 +56,15 @@
             <h2>Patient Information</h2>
             <label for="ageBox">Age</label>
             <input type="number" inputmode="numeric" id="ageBox" placeholder="Enter age">
+			<!-- Gender Toggle -->
+			<div class="toggle-container">
+			<label class="toggle-label">Gender:</label>
+			<label class="switch">
+			<input type="checkbox" id="genderToggle">
+			<span class="slider"></span>
+			</label>
+			<span id="genderLabel">Male</span>
+			</div>
             <button id="calculateButton">Calculate Weight</button>
             <label for="weightBox">Patient's Weight</label>
             <input type="number" inputmode="numeric" id="weightBox" placeholder="Enter weight">
@@ -74,6 +83,14 @@
             <label id="frequencyLabel"></label>
 			<footer> <p>2024 - © All rights reserved to the developer <a href="https://t.me/AriRafiq" target="_blank">Ari</a> </p>    </footer>
         </div>
+	
+	<!-- Notification Modal -->
+	<div class="modal" id="notificationModal">
+		<div class="modal-content">
+			<p>Unfortunately, data for individuals aged beyond 20 years is currently unavailable.</p>
+        		<button class="close-btn" id="closeNotificationBtn">Close</button>
+		</div>
+	</div>
 		
     <script src="stars.js"></script>
     <script src="script.js"></script>
