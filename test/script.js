@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveSettingsBtn = document.getElementById('saveSettingsBtn');
     const medicationSettings = document.getElementById('medicationSettings');
     const defaultValuesBtn = document.getElementById('defaultValuesBtn');
-	const genderToggle = document.getElementById('genderToggle');
+    const genderToggle = document.getElementById('genderToggle');
     const genderLabel = document.getElementById('genderLabel');
-	const notificationModal = document.getElementById('notificationModal');
+    const notificationModal = document.getElementById('notificationModal');
     const closeNotificationBtn = document.getElementById('closeNotificationBtn');
 
     const medicationValues = {
