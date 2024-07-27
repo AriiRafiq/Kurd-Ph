@@ -401,9 +401,11 @@ input:checked + .slider:before {
 
 #notificationModal .modal-content {
     background-color: #fff;
-    margin: 20% auto;
     padding: 20px;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    margin: 20% auto;
 }
 
 #notificationModal .close-btn {
