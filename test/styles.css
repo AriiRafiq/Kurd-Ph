@@ -26,18 +26,17 @@ body, html {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
-    top: 35px;
-    margin-right: auto;
-    margin-left: auto;
-    width: 300px;
+	width: 300px; 
+	height: auto;
+    max-height: 80vh;
     direction: ltr;
-    overflow: auto;
+	overflow: auto;
 }
 
 .background {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 101%;
     background: linear-gradient(135deg, #013220 0%, #026e26 50%, #013c14 100%);
     z-index: -1;
 }
@@ -139,12 +138,13 @@ select {
 }
 
 footer {
+	position: absolute;
     width: 100%;
     color: #fff;
     text-align: center;
     padding: 10px 0;
     font-size: 13px;
-    margin-top: auto;
+	bottom: 1px;
 }
 
 footer a {
