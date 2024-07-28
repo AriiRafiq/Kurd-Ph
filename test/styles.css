@@ -26,11 +26,10 @@ body, html {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
-	width: 300px; 
-	height: auto;
-    max-height: 80vh;
+    width: 300px; 
+    height: 80vh;
     direction: ltr;
-	overflow: auto;
+    overflow: auto;
 }
 
 .background {
