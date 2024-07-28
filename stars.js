@@ -8,7 +8,7 @@ function resizeCanvas() {
 }
 
 window.addEventListener('resize', resizeCanvas);
-resizeCanvas(); // Initial resize
+resizeCanvas();
 
 let stars = [];
 const numStars = 100;
@@ -40,7 +40,7 @@ function moveStars() {
         if (px >= 0 && px <= canvas.width && py >= 0 && py <= canvas.height) {
             const size = (1 - stars[i].z / canvas.width) * 5;
             const shade = parseInt((1 - stars[i].z / canvas.width) * 255);
-            ctx.fillStyle = `rgb(${shade}, ${shade}, 255)`; // Blueish stars
+            ctx.fillStyle = `rgb(0, ${shade}, 150)`;
             ctx.beginPath();
             ctx.arc(px, py, size, 0, Math.PI * 2);
             ctx.fill();
