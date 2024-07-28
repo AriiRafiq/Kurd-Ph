@@ -20,7 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const genderLabel = document.getElementById('genderLabel');
     const notificationModal = document.getElementById('notificationModal');
     const closeNotificationBtn = document.getElementById('closeNotificationBtn');
-
+    const settingsButton = document.getElementById('settingsButton');
+    const disclaimerButton = document.getElementById('disclaimerButton');
+    const sideMenu = document.getElementById('side-menu');
+    const menuButton = document.getElementById('menu-button');
+	
+	// Medication values in mg/kg
     const medicationValues = {
         "Paracetamol": 12.5,
         "Ibuprofen": 8.0,
@@ -40,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Ondansetron": 0.15
     };
 
+	// Medication frequencies
     const medicationFrequencies = {
         "Paracetamol": "1*3",
         "Ibuprofen": "1*3",
@@ -59,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Ondansetron": "1*1"
     };
 
+	// Medication doses
     const medicationDoses = {
         "Paracetamol": ["100 mg/1 ml", "125 mg/5 ml", "250 mg/5 ml"],
         "Ibuprofen": ["100 mg/5 ml", "200 mg/5 ml"],
@@ -78,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "Ondansetron": ["4 mg/5 ml"]
     };
 	
-	    const femaleWeightByAge = {
+	// Female weight by age
+	const femaleWeightByAge = {
         1: 9.25,
         2: 12.02,
         3: 14.29,
@@ -101,7 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
         20: 58.06
     };
 	
-	    const maleWeights = {
+	// Male weight by age
+	const maleWeights = {
         1: 9.66,
         2: 12.47,
         3: 14.06,
@@ -124,12 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
         20: 70.3
     };
 	
+	// Load medication values from local storage if available
 	const savedMedicationValues = localStorage.getItem('medicationValues');
 	if (savedMedicationValues) {
         Object.assign(medicationValues, JSON.parse(savedMedicationValues));
         console.log('Loaded medication values from localStorage:', medicationValues);
     }
 
+	// Populate medication list when focused
     medicationList.addEventListener('focus', () => {
         if (medicationList.options.length === 1) { // Only the initial empty option exists
             Object.keys(medicationValues).forEach(medication => {
@@ -140,7 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-
+	
+	// Update dose list and reset result when medication changes
     medicationList.addEventListener('change', () => {
         doseList.innerHTML = '<option value="" selected disabled hidden></option>'; // Reset doseList
         resultLabel1.textContent = '';
@@ -166,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-	
+	// Calculate weight based on age and gender
 	calculateButton.addEventListener('click', () => {
 		const age = Math.round(parseFloat(ageBox.value));
 		if (isNaN(age)) {
@@ -196,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 
-		    closeNotificationBtn.addEventListener('click', () => {
+	closeNotificationBtn.addEventListener('click', () => {
         notificationModal.style.display = 'none'; // Hide notification modal
     });
 
@@ -218,18 +230,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedDose = doseList.value;
         const weight = parseFloat(weightBox.value);
 
+		// Check if medication is selected
         if (!selectedMedication) {
             resultLabel1.textContent = 'Please select a medication!';
 			addBounceAnimation(medicationList);
             return;
         }
 
+		// Check if dose is selected
         if (!selectedDose) {
             resultLabel1.textContent = 'Please select a dose!';
 			addBounceAnimation(doseList);
             return;
         }
 
+		// Check if weight is valid
         if (isNaN(weight)) {
             resultLabel1.textContent = 'Please enter a valid weight!';
 			addBounceAnimation(weightBox);
@@ -248,10 +263,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-	disclaimerIcon.addEventListener('click', () => {
-		disclaimerModal.style.display = 'flex'; // Make sure it's shown
-	});
 
+	// Disclaimer icon
 	closeModalBtn.addEventListener('click', () => {
 		disclaimerModal.style.display = 'none'; // Hide the modal
 	});
@@ -263,13 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
        		 }
   	  });
 
-     // Settings icon
-
-    settingsIcon.addEventListener('click', () => {
-        settingsModal.style.display = 'flex';
-        loadMedicationSettings();
-    });
-
+    // Settings icon
     closeSettingsModalBtn.addEventListener('click', () => {
         settingsModal.style.display = 'none';
     });
@@ -360,11 +367,36 @@ document.addEventListener('DOMContentLoaded', () => {
         doseList.innerHTML = '<option value="" selected disabled hidden>Select Dose</option>'; // Reset dose list
     }
 
-function addBounceAnimation(element) {
-    element.classList.add('bounce');
-    element.addEventListener('animationend', function() {
+	function addBounceAnimation(element) {
+		element.classList.add('bounce');
+		element.addEventListener('animationend', function() {
         element.classList.remove('bounce');
-    }, { once: true });
-}
+		}, { once: true });
+	}
+
+    // Settings button in side-menu
+    settingsButton.addEventListener('click', () => {
+        settingsModal.style.display = 'flex';
+        loadMedicationSettings();
+        sideMenu.classList.remove('open'); // Close side-menu after click
+    });
+
+    // Disclaimer button in side-menu
+    disclaimerButton.addEventListener('click', () => {
+        disclaimerModal.style.display = 'flex';
+        sideMenu.classList.remove('open'); // Close side-menu after click
+    });
+
+    // Menu button to open side-menu
+    menuButton.addEventListener('click', () => {
+        sideMenu.classList.toggle('open');
+    });
+
+    // Close side-menu when clicking outside of it
+    window.addEventListener('click', (event) => {
+        if (event.target !== sideMenu && !sideMenu.contains(event.target) && event.target !== menuButton) {
+            sideMenu.classList.remove('open');
+        }
+    });
 
 });
