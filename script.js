@@ -399,4 +399,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+// Scroll container to bottom when resultLabel1 is visible
+const observer = new MutationObserver((mutations) => {
+	mutations.forEach((mutation) => {
+		if (mutation.target.style.display !== 'none' && mutation.target.textContent !== '') {
+			const container = document.querySelector('.container');
+			container.scrollTop = container.scrollHeight;
+		}
+	});
+});
+
+observer.observe(resultLabel1, { attributes: true, childList: true, subtree: true });
+
 });
