@@ -411,4 +411,5 @@ input:checked + .slider:before {
 #medicationList,
 #doseList {
     -webkit-appearance: none;
+    color: black;
 }
