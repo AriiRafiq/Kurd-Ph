@@ -361,7 +361,7 @@ input:checked + .slider:before {
     left: 15px;
     font-size: 24px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1009;
     color: white;
     transition: transform 1s ease;
 }
