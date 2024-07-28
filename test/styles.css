@@ -28,7 +28,7 @@ body, html {
     text-align: center;
     width: 300px; 
     height: auto;
-    max-height: 90vh;
+    max-height: 80vh;
     margin-bottom: 16px;
     direction: ltr;
     overflow: auto;
