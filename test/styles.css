@@ -423,24 +423,11 @@ input:checked + .slider:before {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 
-
+-webkit-appearance: none;
 /* Adjusting layout for mobile */
 @media (max-width: 600px) {
     .container {
-        position: relative;
-        z-index: 1;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        padding: 15px;
-        backdrop-filter: blur(8px);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        text-align: center;
-        width: 300px; 
         height: auto;
 	max-height: 40px;
-	margin-bottom: 16px;
-        direction: ltr;
-        overflow: auto;
     }
 }
