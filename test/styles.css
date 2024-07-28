@@ -26,10 +26,10 @@ body, html {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
-    top: 40;
+    top: 35px;
+    margin-right: auto;
+    margin-left: auto;
     width: 300px;
-    height: auto;
-    max-height: 90vh;
     direction: ltr;
     overflow: auto;
 }
