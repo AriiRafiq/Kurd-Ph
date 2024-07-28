@@ -28,7 +28,7 @@ body, html {
     text-align: center;
     width: 300px; 
     height: auto;
-    max-height: 80vh;
+    max-height: 90vh;
     margin-bottom: 16px;
     direction: ltr;
     overflow: auto;
@@ -425,7 +425,7 @@ input:checked + .slider:before {
 
 
 /* Adjusting layout for mobile */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .container {
         position: relative;
         z-index: 1;
@@ -438,7 +438,7 @@ input:checked + .slider:before {
         text-align: center;
         width: 300px; 
         height: auto;
-	max-height: 100px;
+	max-height: 40px;
 	margin-bottom: 16px;
         direction: ltr;
         overflow: auto;
