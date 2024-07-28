@@ -13,12 +13,11 @@ body, html {
 
 .stars {
     position: absolute;
-    width: 100%; /* Cover the viewport width */
-    height: 100%; /* Cover the viewport height */
-    z-index: 0; /* Ensure it's behind the container */
-    pointer-events: none; /* Prevent it from interfering with other elements */
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
 }
-
 
 .container {
     position: absolute;
@@ -38,15 +37,14 @@ body, html {
     overflow: hidden;
 }
 
-
 .background {
-    position: fixed; /* Use fixed positioning */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #36051b 0%, #200536 50%, #0b1321 100%);
-    z-index: -1; /* Ensure it is behind other content */
+    background: linear-gradient(135deg, #013220 0%, #026e26 50%, #013c14 100%);
+    z-index: -1;
 }
 
 h1 {
@@ -60,9 +58,8 @@ p {
   color: white;
 }
 
-
 h2 {
-    color: #ff2ea4;
+    color: #4caf50;
     font-size: 14px;
     background: rgba(0, 0, 0, 0.1);
     padding: 10px;
@@ -70,7 +67,6 @@ h2 {
     margin-bottom: 0px;
     margin-top: 15px;
 }
-
 
 label {
     display: block;
@@ -94,7 +90,7 @@ input:focus, select:focus {
 }
 
 button {
-    background-color: #6e0e6c;
+    background-color: #4caf50;
     color: white;
     border: none;
     padding: 10px;
@@ -106,7 +102,7 @@ button {
 }
 
 button:hover {
-    background-color: #5C0E39;
+    background-color: #388e3c;
 }
 
 .bounce {
@@ -138,7 +134,6 @@ button:hover {
     }
 }
 
-
 select {
     width: 100%;
     padding: 10px;
@@ -148,12 +143,10 @@ select {
     box-sizing: border-box;
 }
 
-
 footer {
     bottom: 0;
     left: 0;
     width: 100%;
-
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -237,16 +230,7 @@ input:checked + .slider:before {
     margin-top: 15px;
 }
 
-/* Add styles for the disclaimer icon and modal */
-.disclaimer-icon {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-
+/* Add styles for the modals */
 .modal {
     display: none;
     position: fixed;
@@ -258,15 +242,6 @@ input:checked + .slider:before {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
-
-.modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 500px;
-    position: relative;
 }
 
 .modal-content p {
@@ -274,65 +249,8 @@ input:checked + .slider:before {
     color: #fff;
 }
 
-.close-btn {
-    background: #6e0e6c;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
-    font-size: 16px;
-}
-
-.close-btn:hover {
-    background: #5C0E39;
-}
-
-/* Settings Icon */
-.settings-icon {
-    position: fixed;
-    top: 10px;
-    left: 10px; /* Adjust as needed */
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-
-/* Settings Modal */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background: linear-gradient(135deg, #36051b 0%, #200536 50%, #0b1321 100%);
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 400px; /* Adjust the width as needed */
-    max-height: 80%; /* Adjust the height as needed */
-    overflow-y: auto; /* Enable vertical scrolling */
-    position: relative;
-}
-
-.modal-content h2 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 20px;
-}
-
 .save-btn, .close-btn {
-    background: #6e0e6c;
+    background: #4caf50;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -343,9 +261,39 @@ input:checked + .slider:before {
 }
 
 .save-btn:hover, .close-btn:hover {
-    background: #5C0E39;
+    background: #388e3c;
 }
 
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Add styles for the disclaimer modal */
+#disclaimerModal .modal-content {
+    background: linear-gradient(135deg, #013220 0%, #026e26 50%, #013c14 100%);
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+	max-height: 80%;
+    max-width: 400px;
+    position: relative;
+}
+
+/* Add styles for the settings modal */
+#settingsModal .modal-content {
+    background: linear-gradient(135deg, #013220 0%, #026e26 50%, #013c14 100%);
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    max-height: 80%;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Add styles for the settings */
 #medicationSettings {
     display: flex;
     flex-direction: column;
@@ -368,9 +316,8 @@ input:checked + .slider:before {
     flex: 0.5;
 }
 
-
 .default-btn {
-    background: #6e0e6c;
+    background: #4caf50;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -381,9 +328,8 @@ input:checked + .slider:before {
 }
 
 .default-btn:hover {
-    background: #5C0E39;
+    background: #388e3c;
 }
-
 
 /* Styles specific to the notification modal */
 #notificationModal {
@@ -400,7 +346,7 @@ input:checked + .slider:before {
 }
 
 #notificationModal .modal-content {
-    background-color: #fff;
+    background: linear-gradient(135deg, #013220 0%, #026e26 50%, #013c14 100%);
     padding: 20px;
     width: 80%;
     max-width: 500px;
@@ -412,4 +358,52 @@ input:checked + .slider:before {
 #doseList {
     -webkit-appearance: none;
     color: black;
+}
+
+/* Styles for the menu button */
+.menu-button {
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    color: white;
+}
+
+/* Styles for the side menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Change from right to left */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 50px;
+    transition: left 0.3s ease; /* Change from right to left */
+    z-index: 1000;
+}
+
+/* Styles for the side menu when open */
+.side-menu.open {
+    left: 0; /* Change from right to left */
+}
+
+/* Styles for the buttons inside the side menu */
+.side-menu button {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #555;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the buttons inside the side menu */
+.side-menu button:hover {
+    background-color: #555;
 }
