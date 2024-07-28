@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
         notificationModal.style.display = 'none'; // Hide notification modal
     });
 
-    window.addEventListener('click', (event) => {
+    document.addEventListener('click', (event) => {
         if (event.target === notificationModal) {
             notificationModal.style.display = 'none'; // Hide notification modal if clicking outside
         }
@@ -272,7 +272,7 @@ doseList.addEventListener('change', () => {
 	});
 
     // Add event listener to close the modal when clicking outside of it
-   	 window.addEventListener('click', (event) => {
+   	 document.addEventListener('click', (event) => {
       	  if (event.target === disclaimerModal) {
            	 disclaimerModal.style.display = 'none';
        		 }
@@ -289,7 +289,7 @@ doseList.addEventListener('change', () => {
     });
 	
 	// Add event listener to close the modal when clicking outside of it
-    window.addEventListener('click', (event) => {
+    document.addEventListener('click', (event) => {
         if (event.target === settingsModal) {
             settingsModal.style.display = 'none';
         }
@@ -395,7 +395,7 @@ doseList.addEventListener('change', () => {
     });
 
     // Close side-menu when clicking outside of it
-    window.addEventListener('click', (event) => {
+    document.addEventListener('click', (event) => {
         if (event.target !== sideMenu && !sideMenu.contains(event.target) && event.target !== menuButton) {
             sideMenu.classList.remove('open');
         }
