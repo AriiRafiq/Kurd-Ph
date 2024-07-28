@@ -438,7 +438,7 @@ input:checked + .slider:before {
         text-align: center;
         width: 300px; 
         height: auto;
-	max-height: 80vh;
+	max-height: 60vh;
 	margin-bottom: 16px;
         direction: ltr;
         overflow: auto;
