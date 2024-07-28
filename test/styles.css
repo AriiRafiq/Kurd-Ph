@@ -424,9 +424,9 @@ input:checked + .slider:before {
     background: #555;
 
 /* Adjusting layout for mobile */
-@media (max-width: 600px) {
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
     .container {
         height: auto;
-	max-height: 60%;
+	max-height: 40vh;
     }
 }
