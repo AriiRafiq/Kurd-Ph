@@ -137,14 +137,13 @@ select {
 }
 
 footer {
+    position: relative;
     bottom: 0;
-    left: 0;
     width: 100%;
     color: #fff;
     text-align: center;
     padding: 10px 0;
     font-size: 13px;
-    margin-top: auto;
 }
 
 footer a {
@@ -421,3 +420,23 @@ input:checked + .slider:before {
 /* Hold the scroll bar when scrolling */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+
+
+/* Adjusting layout for mobile */
+@media (max-width: 768px) {
+    .container {
+        position: relative;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 15px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        text-align: center;
+        width: 300px; 
+        height: 70vh;
+        direction: ltr;
+        overflow: auto;
+    }
+}
