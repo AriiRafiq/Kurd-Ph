@@ -392,12 +392,14 @@ doseList.addEventListener('change', () => {
     // Menu button to open side-menu
     menuButton.addEventListener('click', () => {
         sideMenu.classList.toggle('open');
+        menuButton.classList.toggle('clicked');
     });
 
     // Close side-menu when clicking outside of it
     document.addEventListener('click', (event) => {
         if (event.target !== sideMenu && !sideMenu.contains(event.target) && event.target !== menuButton) {
             sideMenu.classList.remove('open');
+            menuButton.classList.remove('clicked');
         }
     });
 
