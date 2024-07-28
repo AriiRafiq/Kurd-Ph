@@ -27,7 +27,9 @@ body, html {
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
     width: 300px; 
-    height: 80vh;
+    height: auto;
+    max-height: 80vh;
+    margin-bottom: 16px;
     direction: ltr;
     overflow: auto;
 }
@@ -435,7 +437,9 @@ input:checked + .slider:before {
         border: 1px solid rgba(255, 255, 255, 0.3);
         text-align: center;
         width: 300px; 
-        height: 50vh;
+        height: auto;
+	max-height: 80vh;
+	margin-bottom: 16px;
         direction: ltr;
         overflow: auto;
     }
