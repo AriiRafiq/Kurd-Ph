@@ -40,7 +40,7 @@ function moveStars() {
         if (px >= 0 && px <= canvas.width && py >= 0 && py <= canvas.height) {
             const size = (1 - stars[i].z / canvas.width) * 5;
             const shade = parseInt((1 - stars[i].z / canvas.width) * 255);
-            ctx.fillStyle = `rgb(0, ${shade}, 0)`; // Blueish stars
+            ctx.fillStyle = `rgb(0, ${shade}, 150)`; // Blueish stars
             ctx.beginPath();
             ctx.arc(px, py, size, 0, Math.PI * 2);
             ctx.fill();
