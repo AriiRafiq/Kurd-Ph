@@ -363,7 +363,12 @@ input:checked + .slider:before {
     cursor: pointer;
     z-index: 1000;
     color: white;
+    transition: transform 1s ease;
 }
+
+.menu-button:hover {
+    transform: rotate(180deg);
+    }
 
 /* Styles for the side menu */
 .side-menu {
