@@ -422,11 +422,36 @@ input:checked + .slider:before {
 /* Hold the scroll bar when scrolling */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
 
 /* Adjusting layout for mobile */
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+    body, html {
+    	height: 100%;
+    	margin: 0;
+    	font-family: Arial, sans-serif;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	overflow: hidden;
+	}
+
     .container {
-        height: auto;
-	max-height: 40vh;
-    }
+    	position: relative;
+    	z-index: 1;
+    	background: rgba(255, 255, 255, 0.1);
+    	border-radius: 10px;
+    	padding: 15px;
+    	backdrop-filter: blur(8px);
+    	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    	border: 1px solid rgba(255, 255, 255, 0.3);
+    	text-align: center;
+    	width: 300px; 
+    	height: auto;
+    	max-height: 40vh;
+    	margin-bottom: 16px;
+    	direction: ltr;
+    	overflow: auto;
+	}
 }
+
