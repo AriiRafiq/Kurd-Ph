@@ -12,9 +12,53 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <!-- Settings Icon -->
-    <img src="icons/settings-icon.png" alt="Settings Icon" class="settings-icon" id="settingsIcon">
+	
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Stars Canvas -->
+    <div class="stars"></div>
+
+    <div class="container">
+	    <h1 id="title">Syrup Dose Calculator</h1>
+
+        <h2>Patient Information</h2>
+        <label for="ageBox">Age</label>
+        <input type="number" inputmode="numeric" id="ageBox" placeholder="Enter age">
+		<div class="toggle-container">
+			<label class="toggle-label">Gender:</label>
+			<label class="switch">
+			<input type="checkbox" id="genderToggle">
+			<span class="slider"></span>
+			</label>
+			<span id="genderLabel">Male</span>
+		</div>
+        <button id="calculateButton">Calculate Weight</button>
+        <label for="weightBox">Patient's Weight</label>
+        <input type="number" inputmode="numeric" id="weightBox" placeholder="Enter weight">
+
+        <h2>Syrup Dose</h2>
+        <label for="medicationList">Medication</label>
+        <select id="medicationList">
+            <option value="" selected disabled hidden>Select Medication</option>
+        </select>
+        <label for="doseList">Dose</label>
+        <select id="doseList">
+            <option value="" selected disabled hidden>Select Dose</option>
+        </select>
+        <button id="calculateButton1">Calculate Dose</button>
+        <label id="resultLabel1"></label>
+        <label id="frequencyLabel"></label>
+		<footer> <p>2024 - © All rights reserved to the developer <a href="https://t.me/AriRafiq" target="_blank">Ari</a> </p>    </footer>
+    </div>
+	
+	<!-- Notification Modal -->
+	<div class="modal" id="notificationModal">
+		<div class="modal-content">
+			<p>It is recommended to use tablet dosage forms rather than syrups for children above the age of 12 years.</p>
+        		<button class="close-btn" id="closeNotificationBtn">Close</button>
+		</div>
+	</div>
         
     <!-- Settings Modal -->
     <div class="modal" id="settingsModal">
@@ -32,9 +76,6 @@
         </div>
     </div>
     
-    <!-- Disclaimer Icon -->
-    <img src="icons/disclaimer-icon.png" alt="Disclaimer Icon" class="disclaimer-icon" id="disclaimerIcon">
-
     <!-- Disclaimer Modal -->
     <div class="modal" id="disclaimerModal">
         <div class="modal-content">
@@ -43,52 +84,13 @@
         </div>
     </div>
 	
-    <!-- Background -->
-    <div class="background"></div>
+	<!-- Menu-button -->
+	<div id="menu-button" class="menu-button">&#9776;</div>
 
-    <!-- Stars Canvas -->
-    <div class="stars"></div>
-
-    <div class="container">
-	    <h1 id="title">Syrup Dose Calculator</h1>
-
-            <h2>Patient Information</h2>
-            <label for="ageBox">Age</label>
-            <input type="number" inputmode="numeric" id="ageBox" placeholder="Enter age">
-			<!-- Gender Toggle -->
-			<div class="toggle-container">
-			<label class="toggle-label">Gender:</label>
-			<label class="switch">
-			<input type="checkbox" id="genderToggle">
-			<span class="slider"></span>
-			</label>
-			<span id="genderLabel">Male</span>
-			</div>
-            <button id="calculateButton">Calculate Weight</button>
-            <label for="weightBox">Patient's Weight</label>
-            <input type="number" inputmode="numeric" id="weightBox" placeholder="Enter weight">
-
-            <h2>Syrup Dose</h2>
-            <label for="medicationList">Medication</label>
-            <select id="medicationList">
-                <option value="" selected disabled hidden>Select Medication</option>
-            </select>
-            <label for="doseList">Dose</label>
-            <select id="doseList">
-                <option value="" selected disabled hidden>Select Dose</option>
-            </select>
-            <button id="calculateButton1">Calculate Dose</button>
-            <label id="resultLabel1"></label>
-            <label id="frequencyLabel"></label>
-			<footer> <p>2024 - © All rights reserved to the developer <a href="https://t.me/AriRafiq" target="_blank">Ari</a> </p>    </footer>
-        </div>
-	
-	<!-- Notification Modal -->
-	<div class="modal" id="notificationModal">
-		<div class="modal-content">
-			<p>It is recommended to use tablet dosage forms rather than syrups for children above the age of 12 years.</p>
-        		<button class="close-btn" id="closeNotificationBtn">Close</button>
-		</div>
+	<!-- Side-menu -->
+	<div id="side-menu" class="side-menu">
+		<button id="settingsButton">Settings</button>
+		<button id="disclaimerButton">Disclaimer</button>
 	</div>
 		
     <script src="stars.js"></script>
