@@ -261,8 +261,10 @@ document.addEventListener('DOMContentLoaded', () => {
             resultLabel1.textContent = 'Invalid dose format!';
         }
     });
-
-
+	
+doseList.addEventListener('change', () => {
+    calculateButton1.click();
+});
 
 	// Disclaimer icon
 	closeModalBtn.addEventListener('click', () => {
