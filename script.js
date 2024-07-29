@@ -176,6 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             genderLabel.textContent = 'Male';
         }
+        // Simulate calculate button click
+        if (ageBox.value) {
+            calculateButton.click();
+        }
     });
 
 	// Calculate weight based on age and gender
