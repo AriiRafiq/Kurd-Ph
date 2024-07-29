@@ -222,6 +222,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Add event listener for ageBox input
+    ageBox.addEventListener('input', () => {
+        // Simulate calculate button click
+        if (ageBox.value) {
+            calculateButton.click();
+        }
+    });
 
     ageBox.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
