@@ -38,11 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "Cefdinir": 7.0,
         "Cefixime": 8.0,
         "Cefpodoxime": 10.0,
+		"Infex Plus": 5.0,
         "Metronidazole": 7.5,
         "Nitrofurantoin": 1.0,
         "Domperidone": 0.3,
         "Hyoscine": 0.5,
-        "Ondansetron": 0.15
+        "Ondansetron": 0.15,
+		"Chlorpheniramine": 0.1,
+		"Desloratadine": 0.1,
+		"Ketotifen": 0.025,
+		"Prednisolone": 1.5
     };
 
 	// Medication frequencies
@@ -58,31 +63,41 @@ document.addEventListener('DOMContentLoaded', () => {
         "Cefdinir": "1*2",
         "Cefixime": "1*1",
         "Cefpodoxime": "1*2",
+		"Infex Plus": "1*2",
         "Metronidazole": "1*3",
         "Nitrofurantoin": "1*4",
         "Domperidone": "1*3",
         "Hyoscine": "1*3",
-        "Ondansetron": "1*1"
+        "Ondansetron": "1*1",
+		"Chlorpheniramine": "1*3",
+		"Desloratadine": "1*1",
+		"Ketotifen": "1*2",
+		"Prednisolone": "1*2"
     };
 
 	// Medication doses
     const medicationDoses = {
-        "Paracetamol": ["100 mg/1 ml", "125 mg/5 ml", "250 mg/5 ml"],
+        "Paracetamol": ["100 mg/1 ml", "120 mg/5 ml", "125 mg/5 ml", "250 mg/5 ml"],
         "Ibuprofen": ["100 mg/5 ml", "200 mg/5 ml"],
         "Mefenamic Acid": ["50 mg/5 ml"],
         "Amoxicillin": ["125 mg/5 ml", "250 mg/5 ml"],
-        "Amoxiclav": ["156 mg/5 ml", "200 mg/5 ml", "312 mg/5 ml", "457 mg/5 ml"],
-        "Azithromycin": ["100 mg/5 ml", "200 mg/5 ml", "300 mg/7.5 ml"],
+        "Amoxiclav": ["156 mg/5 ml", "200 mg/5 ml", "312.5 mg/5 ml", "457 mg/5 ml"],
+        "Azithromycin": ["200 mg/5 ml", "300 mg/7.5 ml"],
         "Bactrim": ["240 mg/5 ml", "480 mg/5 ml"],
         "Cefalexin": ["125 mg/5 ml", "250 mg/5 ml"],
         "Cefdinir": ["125 mg/5 ml", "250 mg/5 ml"],
-        "Cefixime": ["50 mg/5 ml", "100 mg/5 ml"],
+        "Cefixime": ["100 mg/5 ml"],
         "Cefpodoxime": ["50 mg/5 ml", "100 mg/5 ml"],
-        "Metronidazole": ["25 mg/5 ml", "125 mg/5 ml", "200 mg/5 ml"],
+		"Infex Plus" : ["162.5 mg/5 ml"],
+        "Metronidazole": ["200 mg/5 ml"],
         "Nitrofurantoin": ["25 mg/5 ml", "50 mg/5 ml"],
         "Domperidone": ["5 mg/5 ml"],
         "Hyoscine": ["5 mg/5 ml"],
-        "Ondansetron": ["4 mg/5 ml"]
+        "Ondansetron": ["4 mg/5 ml"],
+		"Chlorpheniramine": ["2 mg/5 ml"],
+		"Desloratadine": ["2.5 mg/5 ml"],
+		"Ketotifen": ["1 mg/5 ml"],
+		"Prednisolone": ["15 mg/5 ml"]
     };
 	
 	// Female weight by age
@@ -354,6 +369,7 @@ doseList.addEventListener('change', () => {
         "Cefdinir": 7.0,
         "Cefixime": 8.0,
         "Cefpodoxime": 10.0,
+		"Infex Plus": 5.0,
         "Metronidazole": 7.5,
         "Nitrofurantoin": 1.0,
         "Domperidone": 0.3,
