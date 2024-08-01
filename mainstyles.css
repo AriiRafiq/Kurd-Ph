@@ -18,12 +18,21 @@ body, html {
     z-index: 0;
 }
 
-.stars {
+.star {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
+    top: -10px;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
 }
 
 .container {
