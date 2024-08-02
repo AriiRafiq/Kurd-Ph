@@ -159,8 +159,8 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Add styles for the modals */
-.modal {
+/* Add styles for the disclaimer modal */
+#disclaimerModal .modal {
     display: none;
     position: fixed;
     top: 0;
@@ -173,12 +173,12 @@ footer a:hover {
     z-index: 1000;
 }
 
-.modal-content p {
+#disclaimerModal .modal-content p {
     margin: 0 0 20px 0;
     color: #fff;
 }
 
-.save-btn, .close-btn {
+#disclaimerModal .save-btn, .close-btn {
     background: #007BFF; /* Changed from green to blue */
     color: #fff;
     border: none;
@@ -189,17 +189,16 @@ footer a:hover {
     font-size: 16px;
 }
 
-.save-btn:hover, .close-btn:hover {
+#disclaimerModal .save-btn:hover, .close-btn:hover {
     background: #0056b3; /* Changed from darker green to darker blue */
 }
 
-.modal-content h2 {
+#disclaimerModal .modal-content h2 {
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 20px;
 }
 
-/* Add styles for the disclaimer modal */
 #disclaimerModal .modal-content {
     background: rgb(2,0,36);
 	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
@@ -208,7 +207,7 @@ footer a:hover {
     width: 80%;
 	max-height: 80%;
     max-width: 400px;
-    margin: 210px 520px;
+    position: relative;
 }
 
 /* Styles for the menu button */
