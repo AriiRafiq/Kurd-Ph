@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sideMenu = document.getElementById('side-menu');
     const menuButton = document.getElementById('menu-button');
 	
-    // Medication values in mg/kg
+    // Medication values in mg/kg/dose
     const medicationValues = {
         "Paracetamol": 12.5,
         "Ibuprofen": 8.0,
@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
         medicationSettings.innerHTML = `
             <div class="medication-header">
                 <span>Medication</span>
-                <span>Value (mg/kg)</span>
+                <span>Value (mg/kg/dose)</span>
             </div>
         `;
         for (let medication in medicationValues) {
