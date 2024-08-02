@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	"Chlorpheniramine": 0.1,
 	"Desloratadine": 0.1,
 	"Ketotifen": 0.025,
-	"Prednisolone": 1.5
+	"Prednisolone": 1.0
     };
 
     // Medication frequencies
@@ -373,7 +373,11 @@ document.addEventListener('DOMContentLoaded', () => {
         "Nitrofurantoin": 1.0,
         "Domperidone": 0.3,
         "Hyoscine": 0.5,
-        "Ondansetron": 0.15
+        "Ondansetron": 0.15,
+	"Chlorpheniramine": 0.1,
+	"Desloratadine": 0.1,
+	"Ketotifen": 0.025,
+	"Prednisolone": 1.0
     };
 
         Object.assign(medicationValues, defaultMedicationValues);
