@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Paracetamol": 12.5,
         "Ibuprofen": 8.0,
         "Mefenamic Acid": 8.0,
-        "Amoxicillin": 17.0,
+        "Amoxicillin": 16.0,
         "Amoxiclav": 25.0,
         "Azithromycin": 12.0,
         "Bactrim": 12.0,
