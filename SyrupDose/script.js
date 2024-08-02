@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sideMenu = document.getElementById('side-menu');
     const menuButton = document.getElementById('menu-button');
 	
-	// Medication values in mg/kg
+    // Medication values in mg/kg
     const medicationValues = {
         "Paracetamol": 12.5,
         "Ibuprofen": 8.0,
@@ -38,19 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
         "Cefdinir": 7.0,
         "Cefixime": 8.0,
         "Cefpodoxime": 10.0,
-		"Infex Plus": 5.0,
+	"Infex Plus": 5.0,
         "Metronidazole": 7.5,
         "Nitrofurantoin": 1.0,
         "Domperidone": 0.3,
         "Hyoscine": 0.5,
         "Ondansetron": 0.15,
-		"Chlorpheniramine": 0.1,
-		"Desloratadine": 0.1,
-		"Ketotifen": 0.025,
-		"Prednisolone": 1.5
+	"Chlorpheniramine": 0.1,
+	"Desloratadine": 0.1,
+	"Ketotifen": 0.025,
+	"Prednisolone": 1.5
     };
 
-	// Medication frequencies
+    // Medication frequencies
     const medicationFrequencies = {
         "Paracetamol": "1*3",
         "Ibuprofen": "1*3",
@@ -63,19 +63,19 @@ document.addEventListener('DOMContentLoaded', () => {
         "Cefdinir": "1*2",
         "Cefixime": "1*1",
         "Cefpodoxime": "1*2",
-		"Infex Plus": "1*2",
+	"Infex Plus": "1*2",
         "Metronidazole": "1*3",
         "Nitrofurantoin": "1*4",
         "Domperidone": "1*3",
         "Hyoscine": "1*3",
         "Ondansetron": "1*1",
-		"Chlorpheniramine": "1*3",
-		"Desloratadine": "1*1",
-		"Ketotifen": "1*2",
-		"Prednisolone": "1*2"
+	"Chlorpheniramine": "1*3",
+	"Desloratadine": "1*1",
+	"Ketotifen": "1*2",
+	"Prednisolone": "1*2"
     };
 
-	// Medication doses
+    // Medication doses
     const medicationDoses = {
         "Paracetamol": ["100 mg/1 ml", "120 mg/5 ml", "125 mg/5 ml", "250 mg/5 ml"],
         "Ibuprofen": ["100 mg/5 ml", "200 mg/5 ml"],
@@ -88,20 +88,20 @@ document.addEventListener('DOMContentLoaded', () => {
         "Cefdinir": ["125 mg/5 ml", "250 mg/5 ml"],
         "Cefixime": ["100 mg/5 ml"],
         "Cefpodoxime": ["50 mg/5 ml", "100 mg/5 ml"],
-		"Infex Plus" : ["162.5 mg/5 ml"],
+	"Infex Plus" : ["162.5 mg/5 ml"],
         "Metronidazole": ["200 mg/5 ml"],
         "Nitrofurantoin": ["25 mg/5 ml", "50 mg/5 ml"],
         "Domperidone": ["5 mg/5 ml"],
         "Hyoscine": ["5 mg/5 ml"],
         "Ondansetron": ["4 mg/5 ml"],
-		"Chlorpheniramine": ["2 mg/5 ml"],
-		"Desloratadine": ["2.5 mg/5 ml"],
-		"Ketotifen": ["1 mg/5 ml"],
-		"Prednisolone": ["15 mg/5 ml"]
+	"Chlorpheniramine": ["2 mg/5 ml"],
+	"Desloratadine": ["2.5 mg/5 ml"],
+	"Ketotifen": ["1 mg/5 ml"],
+	"Prednisolone": ["15 mg/5 ml"]
     };
 	
-	// Female weight by age
-	const femaleWeightByAge = {
+    // Female weight by age
+    const femaleWeightByAge = {
         1: 9.25,
         2: 12.02,
         3: 14.29,
@@ -124,8 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
         20: 58.06
     };
 	
-	// Male weight by age
-	const maleWeights = {
+    // Male weight by age
+    const maleWeights = {
         1: 9.66,
         2: 12.47,
         3: 14.06,
@@ -148,14 +148,14 @@ document.addEventListener('DOMContentLoaded', () => {
         20: 70.3
     };
 	
-	// Load medication values from local storage if available
-	const savedMedicationValues = localStorage.getItem('medicationValues');
+    // Load medication values from local storage if available
+    const savedMedicationValues = localStorage.getItem('medicationValues');
 	if (savedMedicationValues) {
-        Object.assign(medicationValues, JSON.parse(savedMedicationValues));
-        console.log('Loaded medication values from localStorage:', medicationValues);
+            Object.assign(medicationValues, JSON.parse(savedMedicationValues));
+            console.log('Loaded medication values from localStorage:', medicationValues);
     }
 
-	// Populate medication list when focused
+    // Populate medication list when focused
     medicationList.addEventListener('focus', () => {
         if (medicationList.options.length === 1) { // Only the initial empty option exists
             Object.keys(medicationValues).forEach(medication => {
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 	
-	// Update dose list and reset result when medication changes
+    // Update dose list and reset result when medication changes
     medicationList.addEventListener('change', () => {
         doseList.innerHTML = '<option value="" selected disabled hidden></option>'; // Reset doseList
         resultLabel1.textContent = '';
@@ -197,26 +197,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-	// Calculate weight based on age and gender
-	calculateButton.addEventListener('click', () => {
-		const age = Math.round(parseFloat(ageBox.value));
-		if (isNaN(age)) {
-			addBounceAnimation(ageBox);
-			return; // Exit early if age is invalid
-		} 
+    // Calculate weight based on age and gender
+    calculateButton.addEventListener('click', () => {
+	const age = Math.round(parseFloat(ageBox.value));
+	    if (isNaN(age)) {
+		addBounceAnimation(ageBox);
+		return; // Exit early if age is invalid
+	    } 
 
-		if (age >= 21) {
-			notificationModal.style.display = 'block'; // Show notification modal
-			addBounceAnimation(ageBox);
-			return;
-		}
+	    if (age >= 21) {
+		notificationModal.style.display = 'block'; // Show notification modal
+		addBounceAnimation(ageBox);
+		return;
+	    }
 		
-		if (age >= 0 && age < 1) {
-			age = 1;
-			ageBox.value = age;
-		}
+	    if (age >= 0 && age < 1) {
+		age = 1;
+		ageBox.value = age;
+	    }
 
-		let weight;
+	    let weight;
 		if (genderToggle.checked) {
 			weight = femaleWeightByAge[age];
 		} else {
@@ -224,11 +224,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		weightBox.value = weight;
 		addBounceAnimation(medicationList); // This will only be called if age is less than 21
-	});
+    });
 
 
-	closeNotificationBtn.addEventListener('click', () => {
-        notificationModal.style.display = 'none'; // Hide notification modal
+    closeNotificationBtn.addEventListener('click', () => {
+    	notificationModal.style.display = 'none'; // Hide notification modal
     });
 
     document.addEventListener('click', (event) => {
@@ -239,7 +239,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add event listener for ageBox input
     ageBox.addEventListener('input', () => {
-        // Simulate calculate button click
         if (ageBox.value) {
             calculateButton.click();
         }
@@ -256,21 +255,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedDose = doseList.value;
         const weight = parseFloat(weightBox.value);
 
-		// Check if medication is selected
+	// Check if medication is selected
         if (!selectedMedication) {
             resultLabel1.textContent = 'Please select a medication!';
 			addBounceAnimation(medicationList);
             return;
         }
 
-		// Check if dose is selected
+	// Check if dose is selected
         if (!selectedDose) {
             resultLabel1.textContent = 'Please select a dose!';
 			addBounceAnimation(doseList);
             return;
         }
 
-		// Check if weight is valid
+	// Check if weight is valid
         if (isNaN(weight)) {
             resultLabel1.textContent = 'Please enter a valid weight!';
 			addBounceAnimation(weightBox);
@@ -288,21 +287,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 	
-doseList.addEventListener('change', () => {
-    calculateButton1.click();
-});
+    doseList.addEventListener('change', () => {
+    	calculateButton1.click();
+    });
 
-	// Disclaimer icon
-	closeModalBtn.addEventListener('click', () => {
-		disclaimerModal.style.display = 'none'; // Hide the modal
-	});
+    // Disclaimer icon
+    closeModalBtn.addEventListener('click', () => {
+	disclaimerModal.style.display = 'none'; // Hide the modal
+    });
 
     // Add event listener to close the modal when clicking outside of it
-   	 document.addEventListener('click', (event) => {
-      	  if (event.target === disclaimerModal) {
-           	 disclaimerModal.style.display = 'none';
+    document.addEventListener('click', (event) => {
+      	if (event.target === disclaimerModal) {
+            disclaimerModal.style.display = 'none';
        		 }
-  	  });
+    });
 
     // Settings icon
     closeSettingsModalBtn.addEventListener('click', () => {
@@ -314,7 +313,7 @@ doseList.addEventListener('change', () => {
         settingsModal.style.display = 'none';
     });
 	
-	// Add event listener to close the modal when clicking outside of it
+    // Add event listener to close the modal when clicking outside of it
     document.addEventListener('click', (event) => {
         if (event.target === settingsModal) {
             settingsModal.style.display = 'none';
@@ -369,7 +368,7 @@ doseList.addEventListener('change', () => {
         "Cefdinir": 7.0,
         "Cefixime": 8.0,
         "Cefpodoxime": 10.0,
-		"Infex Plus": 5.0,
+	"Infex Plus": 5.0,
         "Metronidazole": 7.5,
         "Nitrofurantoin": 1.0,
         "Domperidone": 0.3,
@@ -396,12 +395,12 @@ doseList.addEventListener('change', () => {
         doseList.innerHTML = '<option value="" selected disabled hidden>Select Dose</option>'; // Reset dose list
     }
 
-	function addBounceAnimation(element) {
-		element.classList.add('bounce');
-		element.addEventListener('animationend', function() {
+    function addBounceAnimation(element) {
+	element.classList.add('bounce');
+	element.addEventListener('animationend', function() {
         element.classList.remove('bounce');
-		}, { once: true });
-	}
+	}, { once: true });
+    }
 
     // Settings button in side-menu
     settingsButton.addEventListener('click', () => {
@@ -430,8 +429,8 @@ doseList.addEventListener('change', () => {
         }
     });
 
-// Scroll container to bottom when resultLabel1 is visible
-const observer = new MutationObserver((mutations) => {
+    // Scroll container to bottom when resultLabel1 is visible
+    const observer = new MutationObserver((mutations) => {
 	mutations.forEach((mutation) => {
 		if (mutation.target.style.display !== 'none' && mutation.target.textContent !== '') {
 			const container = document.querySelector('.container');
@@ -440,6 +439,6 @@ const observer = new MutationObserver((mutations) => {
 	});
 });
 
-observer.observe(resultLabel1, { attributes: true, childList: true, subtree: true });
+    observer.observe(resultLabel1, { attributes: true, childList: true, subtree: true });
 
 });
