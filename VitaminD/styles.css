@@ -39,8 +39,7 @@ body, html {
     position: absolute;
     width: 100%;
     height: 102%;
-	background: rgb(2,0,36);
-    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(135deg, #524e0a 0%, #3b3804 50%, #212003 100%);
     z-index: -1;
 }
 
@@ -56,7 +55,7 @@ p {
 }
 
 h2 {
-    color: #007BFF; /* Changed from green to blue */
+    color: #d4d120;
     font-size: 14px;
     background: rgba(0, 0, 0, 0.1);
     padding: 10px;
@@ -87,7 +86,7 @@ input:focus, select:focus {
 }
 
 button {
-    background-color: #007BFF; /* Changed from green to blue */
+    background-color: #8c7119;
     color: white;
     border: none;
     padding: 10px;
@@ -99,7 +98,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3; /* Changed from darker green to darker blue */
+    background-color: #ad9f1c;
 }
 
 .bounce {
@@ -174,8 +173,7 @@ footer a:hover {
 }
 
 .modal-content {
-    background: rgb(2,0,36);
-    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(135deg, #524e0a 0%, #3b3804 50%, #212003 100%);
     padding: 20px;
     border-radius: 8px;
     width: 80%;
@@ -193,7 +191,7 @@ footer a:hover {
 }
 
 .close-btn {
-    background: #007BFF; /* Changed from green to blue */
+    background: #8c7119;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -204,7 +202,7 @@ footer a:hover {
 }
 
 .close-btn:hover {
-    background: #0056b3; /* Changed from darker green to darker blue */
+    background: #ad9f1c;
 }
 
 .modal-content h2 {
@@ -233,18 +231,18 @@ footer a:hover {
 .side-menu {
     position: fixed;
     top: 0;
-    left: -250px; /* Change from right to left */
+    left: -250px;
     width: 250px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     padding-top: 50px;
-    transition: left 0.3s ease; /* Change from right to left */
+    transition: left 0.3s ease;
     z-index: 1000;
 }
 
 /* Styles for the side menu when open */
 .side-menu.open {
-    left: 0; /* Change from right to left */
+    left: 0;
 }
 
 /* Styles for the buttons inside the side menu */
