@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <title>Syrup Dose Calculator</title>
+    <link rel="icon" href="https://i.ibb.co/6bYbqdR/vitamin-Icon.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://i.ibb.co/fY9PfrT/vitamin-Icon120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://i.ibb.co/Lr0QLpL/vitamin-Icon152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://i.ibb.co/JzMBtMH/vitamin-Icon167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/MNnYnGX/vitamin-Icon180.png">
+    <link rel="icon" sizes="192x192" href="https://i.ibb.co/7S8B4ZB/vitamin-Icon192.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Stars Canvas -->
+    <div class="stars"></div>
+
+    <div class="container">
+	    <h1 id="title">Vit D3 Dose Calculator</h1>
+
+        <h2>Patient Information</h2>
+        <label for="ageBox">Age</label>
+        <input type="number" inputmode="numeric" id="ageBox" placeholder="Enter age">
+        <label for="weightBox">Patient's Weight (Kg)</label>
+        <input type="number" inputmode="numeric" id="weightBox" placeholder="Enter weight">
+
+        <h2>Vit D3 Dose</h2>
+		<label for="vitBox">Current Vitamin D3 Blood Level (ng/mL)</label>
+        <input type="number" inputmode="numeric" id="vitBox" placeholder="Enter vit D3 level">
+        <button id="calculateButton">Calculate Dose</button>
+        <label id="resultLabel"></label>
+		<label id="dayResultLabel"></label>
+    </div>
+
+	<footer> <p>2024 - © All rights reserved to the developer <a href="https://t.me/AriRafiq" target="_blank">Ari</a> </p>    </footer>
+    
+    <!-- Disclaimer Modal -->
+    <div class="modal" id="disclaimerModal">
+        <div class="modal-content">
+            <p>Disclaimer: This website is for informational purposes only and does not replace professional medical advice, diagnosis, or treatment. The content provided here is intended to enhance understanding of pediatric medications, but should not be used as a substitute for the expertise, knowledge, and judgment of healthcare professionals.</p>
+            <button class="close-btn" id="closeModalBtn">Close</button>
+        </div>
+    </div>
+	
+	<!-- Menu-button -->
+	<div id="menu-button" class="menu-button">&#9776;</div>
+
+	<!-- Side-menu -->
+	<div id="side-menu" class="side-menu">
+		<button id="disclaimerButton">Disclaimer</button>
+	</div>
+		
+    <script src="stars.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
