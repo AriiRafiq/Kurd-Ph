@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Show disclaimer modal
     disclaimerButton.addEventListener('click', function() {
         disclaimerModal.style.display = 'block';
+        sideMenu.classList.remove('open');
     });
 
     // Close disclaimer modal
