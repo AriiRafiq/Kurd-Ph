@@ -117,6 +117,7 @@ footer {
 @media (max-width: 600px) {
     header {
         padding: 15px 0;
+		margin-top: 20px;
     }
 
     h1 {
@@ -134,6 +135,7 @@ footer {
     .projects {
         flex-direction: column;
         gap: 15px;
+		display: block;
     }
 
     .project {
