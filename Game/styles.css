@@ -63,3 +63,16 @@ button {
 button:hover {
     background-color: #ff6347;
 }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .card {
+        height: 80px; /* Adjust height for smaller screens */
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .info button {
+        padding: 8px 16px; /* Adjust button size for smaller screens */
+        font-size: 0.9rem;
+    }
+}
