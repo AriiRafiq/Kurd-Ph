@@ -115,9 +115,13 @@ footer {
 
 /* Mobile Responsive Design */
 @media (max-width: 600px) {
+    body {
+        align-content: center;
+    }
+	
     header {
         padding: 15px 0;
-		margin-top: 20px;
+	margin-top: 20px;
     }
 
     h1 {
@@ -134,8 +138,8 @@ footer {
 
     .projects {
         flex-direction: column;
-        gap: 15px;
-		display: block;
+        gap: 15px 5px;
+	display: block;
     }
 
     .project {
