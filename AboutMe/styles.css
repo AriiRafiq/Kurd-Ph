@@ -1,0 +1,261 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #07122e 0%, #01091f 50%, #000000 100%);
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    top: -10px;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    width: 320px; 
+    height: auto;
+    max-height: 80vh;
+    margin-bottom: 16px;
+    direction: ltr;
+    overflow: auto;
+}
+
+.profile-container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 3px;
+    animation: flip 3s ;
+}
+
+.greeting {
+    color: #4caf50;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+.introduction {
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.purpose {
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: Medium;
+}
+
+.date {
+    color: #bfbfbf;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.quote {
+    color: #19c2e0;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.telegram-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color: rgba(0, 120, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.telegram-button:hover {
+    background-color: rgba(0, 120, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.telegram-button i {
+    margin-right:  10px;
+}
+
+/* Animations */
+@keyframes flip {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+p {
+    color: #dbdbdb;
+    margin-bottom: 18px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+
+
+}
+
+@keyframes colorChange {
+    0% { color: #21fbff; } /* اللون الأزرق */
+    50% { color: #ffffff; } /* اللون الأبيض */
+    100% { color: #21fbff; } /* العودة إلى اللون الأزرق */
+}
+
+/* Styles for the menu button */
+.menu-button {
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1009;
+    color: white;
+    transition: transform 0.5s ease;
+}
+
+.menu-button.clicked {
+    transform: rotate(180deg) scale(1.1);
+    }
+
+/* Styles for the side menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Change from right to left */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 50px;
+    transition: left 0.3s ease; /* Change from right to left */
+    z-index: 1000;
+}
+
+/* Styles for the side menu when open */
+.side-menu.open {
+    left: 0; /* Change from right to left */
+}
+
+/* Styles for the buttons inside the side menu */
+.side-menu button {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #555;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the buttons inside the side menu */
+.side-menu button:hover {
+    background-color: #555;
+}
+
+/* Slider */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Scrollbar path */
+::-webkit-scrollbar-track {
+    background-color: Rgb(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Scroll bar grab */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Hold the scroll bar when scrolling */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
