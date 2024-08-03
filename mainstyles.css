@@ -77,13 +77,11 @@ main {
     width: calc(50% - 20px);
     max-width: 350px;
     text-align: center;
-    border: 2px solid transparent;
 }
 
 .project:hover {
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px);
-    border-color: #00bfa6;
 }
 
 .project h3 {
@@ -168,6 +166,11 @@ footer {
     .project {
         width: 90%;
         max-width: 400px;
+    }
+    
+    .project:hover {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
     }
 
     button {
