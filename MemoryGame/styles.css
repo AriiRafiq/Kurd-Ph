@@ -1,6 +1,5 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #4b6cb7 0%, #3b8d99 50%, #00b4d8 100%); /* Cool blue gradient */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,6 +18,14 @@ body {
     grid-gap: 10px;
     margin: 20px auto;
     width: max-content;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 109%;
+    background: linear-gradient(135deg, #4b6cb7 0%, #3b8d99 50%, #00b4d8 100%);
+    z-index: -1;
 }
 
 .card {
