@@ -2,6 +2,8 @@ const gameBoard = document.querySelector('.game-board');
 const movesCounter = document.getElementById('moves');
 const matchesCounter = document.getElementById('matches');
 const restartButton = document.getElementById('restart');
+const menuButton = document.getElementById('menu-button');
+const sideMenu = document.getElementById('side-menu');
 
 let moves = 0;
 let matches = 0;
@@ -95,3 +97,17 @@ function resetGame() {
 restartButton.addEventListener('click', resetGame);
 
 createBoard();
+
+    // Toggle side menu
+    menuButton.addEventListener('click', function() {
+        sideMenu.classList.toggle('open');
+		menuButton.classList.toggle('clicked');
+    });
+
+	// Close side-menu when clicking outside of it
+    document.addEventListener('click', (event) => {
+        if (event.target !== sideMenu && !sideMenu.contains(event.target) && event.target !== menuButton) {
+            sideMenu.classList.remove('open');
+            menuButton.classList.remove('clicked');
+        }
+    });
