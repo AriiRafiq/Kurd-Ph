@@ -161,9 +161,9 @@ footer a:hover {
         justify-content: center;
         align-items: center;
         height: 100%;
-        margin-top: 20px;
+        margin-top: 50px;
         color: #e0e0e0;
-	    overflow: hidden;
+	overflow: hidden;
     }
 
     .background {
