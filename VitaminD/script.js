@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const disclaimerButton = document.getElementById('disclaimerButton');
     const menuButton = document.getElementById('menu-button');
     const sideMenu = document.getElementById('side-menu');
+    const title = document.getElementById('title');
+
+    // Alert message on page load
+    alert("Please note that this page is still under work");
 
     // Focus on the next input box when Enter is pressed
     ageBox.addEventListener('keydown', function(event) {
