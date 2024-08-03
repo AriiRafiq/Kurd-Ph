@@ -115,13 +115,8 @@ footer {
 
 /* Mobile Responsive Design */
 @media (max-width: 600px) {
-    body {
-        align-content: center;
-    }
-	
     header {
         padding: 15px 0;
-	margin-top: 20px;
     }
 
     h1 {
@@ -137,13 +132,16 @@ footer {
     }
 
     .projects {
+        display: flex;
         flex-direction: column;
-        gap: 15px 5px;
-	display: block;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px; /* Add some margin for better spacing */
     }
 
     .project {
         width: 90%;
+        max-width: 400px;
     }
 
     button {
