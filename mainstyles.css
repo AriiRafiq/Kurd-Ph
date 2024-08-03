@@ -167,11 +167,6 @@ footer {
         width: 90%;
         max-width: 400px;
     }
-    
-    .project img {
-    max-width: 100%;
-    height: auto;
-    }
 
     button {
         padding: 8px 16px;
