@@ -1,11 +1,12 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    background: linear-gradient(135deg, #4b6cb7 0%, #3b8d99 50%, #00b4d8 100%); /* Cool blue gradient */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+	color: #e0e0e0;
 }
 
 .game-container {
@@ -21,7 +22,7 @@ body {
 }
 
 .card {
-    background-color: #87ceeb;
+    background: #e0e0e0;
     border-radius: 8px;
     width: 100px;
     height: 100px;
@@ -30,24 +31,29 @@ body {
     align-items: center;
     cursor: pointer;
     font-size: 2rem;
-    color: #fff;
+    color: #444;
     position: relative;
     transform: scale(1);
-    transition: transform 0.2s;
+    transition: transform 0.2s, background-color 0.3s;
 }
 
 .card.flip {
-    background-color: #48d1cc;
+    background-color: #d4e2f0; /* Light blue with a hint of gray */
     transform: scale(1.05);
 }
 
 .card.match {
-    background-color: #32cd32;
+    background-color: #bde5b2; /* Soft green that complements the background */
     pointer-events: none;
 }
 
 .info {
     margin-top: 20px;
+	color: #f5f5f5;
+}
+
+h1 {
+	margin-bottom: 40px;
 }
 
 button {
