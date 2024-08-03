@@ -67,7 +67,7 @@ button:hover {
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
     .game-board {
-        grid-template-columns: repeat(4, 10px);
+        grid-template-columns: repeat(4, 70px);
         grid-gap: 5px;
     }
 
