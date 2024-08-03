@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const disclaimerButton = document.getElementById('disclaimerButton');
     const sideMenu = document.getElementById('side-menu');
     const menuButton = document.getElementById('menu-button');
+    const title = document.getElementById('title');
 	
     // Medication values in mg/kg/dose
     const medicationValues = {
