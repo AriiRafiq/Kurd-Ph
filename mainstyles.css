@@ -63,7 +63,7 @@ h1 {
 h2 {
     margin-top: 20px;
     color: white;
-	font-size: 22px;
+    font-size: 22px;
 }
 
 button {
@@ -83,6 +83,7 @@ button {
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 250px;
 }
 
 button:hover {
