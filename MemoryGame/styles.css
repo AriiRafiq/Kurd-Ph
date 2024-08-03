@@ -3,9 +3,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     color: #e0e0e0;
+	overflow: hidden;
 }
 
 .game-container {
