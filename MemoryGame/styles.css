@@ -69,6 +69,59 @@ button:hover {
     background-color: #ff6347;
 }
 
+/* Styles for the menu button */
+.menu-button {
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1009;
+    color: white;
+    transition: transform 0.5s ease;
+}
+
+.menu-button.clicked {
+    transform: rotate(180deg) scale(1.1);
+    }
+
+/* Styles for the side menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Change from right to left */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 50px;
+    transition: left 0.3s ease; /* Change from right to left */
+    z-index: 1000;
+}
+
+/* Styles for the side menu when open */
+.side-menu.open {
+    left: 0; /* Change from right to left */
+}
+
+/* Styles for the buttons inside the side menu */
+.side-menu button {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #555;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the buttons inside the side menu */
+.side-menu button:hover {
+    background-color: #555;
+}
+
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
     .game-board {
