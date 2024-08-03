@@ -81,7 +81,7 @@ main {
 }
 
 .project:hover {
-    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
     border-color: #00bfa6;
 }
 
