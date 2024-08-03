@@ -66,10 +66,15 @@ button:hover {
 
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        grid-gap: 5px;
+    }
+
     .card {
-        height: 80px;
-        width: 80px;
-        font-size: 1.5rem;
+        height: 70px;
+        width: 70px;
+        font-size: 1.2rem;
     }
 
     .info button {
