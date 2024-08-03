@@ -69,7 +69,7 @@ function checkMatch() {
             card1.querySelector('.emoji').style.display = 'none';
             card2.querySelector('.emoji').style.display = 'none';
             lock = false; // Reset lock when cards do not match
-        }, 500);
+        }, 750);
     }
 
     flippedCards = [];
