@@ -155,6 +155,25 @@ footer a:hover {
 
 /* Media Queries for Responsive Design */
 @media (max-width: 600px) {
+	body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin-top: 20px;
+        color: #e0e0e0;
+	    overflow: hidden;
+    }
+
+    .background {
+        position: absolute;
+        width: 100%;
+        height: 109%;
+        background: linear-gradient(135deg, #4b6cb7 0%, #3b8d99 50%, #00b4d8 100%);
+        z-index: -1;
+    }
+
     .game-board {
         grid-template-columns: repeat(4, 85px);
         grid-gap: 5px;
