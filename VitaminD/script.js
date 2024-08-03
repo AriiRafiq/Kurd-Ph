@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const vitBox = document.getElementById('vitBox');
     const calculateButton = document.getElementById('calculateButton');
     const resultLabel = document.getElementById('resultLabel');
-	const dayResultLabel = document.getElementById('dayResultLabel');
+    const dayResultLabel = document.getElementById('dayResultLabel');
     const disclaimerModal = document.getElementById('disclaimerModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const disclaimerButton = document.getElementById('disclaimerButton');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.key === 'Enter') {
             event.preventDefault(); // Prevent form submission
             weightBox.focus();
-			addBounceAnimation(weightBox);
+	    addBounceAnimation(weightBox);
         }
     });
 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.key === 'Enter') {
             event.preventDefault();
             vitBox.focus();
-			addBounceAnimation(vitBox);
+	    addBounceAnimation(vitBox);
         }
     });
 
@@ -66,13 +66,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Toggle side menu
     menuButton.addEventListener('click', function() {
         sideMenu.classList.toggle('open');
-		menuButton.classList.toggle('clicked');
+	menuButton.classList.toggle('clicked');
     });
 
     // Close modal if user clicks outside of it
     document.addEventListener('click', function(event) {
         if (event.target === disclaimerModal) {
-            disclaimerModal.style.display = 'none';
+        disclaimerModal.style.display = 'none';
         }
     });
 	
@@ -83,16 +83,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function resetFields() {
         ageBox.value = '';
         weightBox.value = '';
-		vitBox.value = '';
+	vitBox.value = '';
         resultLabel.textContent = '';
         dayResultLabel.textContent = '';
     }
 	
 	function addBounceAnimation(element) {
-		element.classList.add('bounce');
-		element.addEventListener('animationend', function() {
+	element.classList.add('bounce');
+	element.addEventListener('animationend', function() {
         element.classList.remove('bounce');
-		}, { once: true });
+	}, { once: true });
     }
 	
 	// Close side-menu when clicking outside of it
