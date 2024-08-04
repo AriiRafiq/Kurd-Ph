@@ -14,7 +14,7 @@ body, html {
 
 /* Header Section */
 header {
-    background: linear-gradient(135deg, #ffcc00, #ff9966);
+    background: linear-gradient(135deg, #ff6f00, #ffab40);
     width: 100%;
     padding: 50px 0;
     display: flex;
@@ -63,7 +63,7 @@ main {
 }
 
 .calculator h2 {
-    color: #ff9966;
+    color: #ffab40;
     margin-top: 0;
 }
 
@@ -87,7 +87,7 @@ input {
 }
 
 button {
-    background: #ff9966;
+    background: #ffab40;
     color: #fff;
     padding: 15px;
     border: none;
@@ -99,7 +99,7 @@ button {
 }
 
 button:hover {
-    background: #ffcc00;
+    background: #ff6f00;
     transform: scale(1.05);
 }
 
@@ -119,7 +119,7 @@ footer {
 }
 
 footer a {
-    color: #ffcc00;
+    color: #ffab40;
     text-decoration: none;
 }
 
@@ -150,7 +150,7 @@ footer a:hover {
 }
 
 .close-btn {
-    background: #ff9966;
+    background: #ffab40;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -240,4 +240,3 @@ footer a:hover {
         padding: 20px;
     }
 }
-
