@@ -41,9 +41,10 @@ header {
 .header-sketch img {
     width: 150px;
     animation: slideIn 1s ease-out;
-    position: fixed;
+    position: absolute;
     top: 90px;
     right: 0px;
+    z-index: 1000;
 }
 
 /* Main Section */
