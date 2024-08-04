@@ -40,7 +40,7 @@ header {
 
 .header-sketch {
     display: flex;
-    position: relative;
+    position: fixed;
     top: 90px;
     right: 0px;
     z-index: 1000; /* Ensure this is higher than the overlay */
