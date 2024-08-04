@@ -17,29 +17,46 @@ body {
 }
 
 header {
-    background-color: #00bfa6;
+    background: linear-gradient(135deg, rgba(3,129,151,1) 0%, rgba(0,191,166,1) 50%, rgba(3,129,151,1) 100%);
     width: 100%;
-    margin-top: 15px;
     padding: 20px 0;
     text-align: center;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 0;
+    border-bottom: 2px solid #00796b;
+    filter: blur(8px);
 }
 
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .logo img {
-    height: 50px;
+    height: 60px;
     margin-right: 15px;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 28px;
     color: #fff;
     font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
 }
 
 main {
@@ -50,9 +67,9 @@ main {
 }
 
 .hero h2 {
-    font-size: 32px;
+    font-size: 36px;
     margin-bottom: 10px;
-    color: #00bfa6;
+    color: #01687a;
 }
 
 .hero p {
@@ -77,17 +94,19 @@ main {
     width: calc(50% - 20px);
     max-width: 350px;
     text-align: center;
+    border: 2px solid transparent;
 }
 
 .project:hover {
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px);
+    border-color: #038197;
 }
 
 .project h3 {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 15px;
-    color: #333;
+    color: #01687a;
 }
 
 button {
@@ -98,11 +117,12 @@ button {
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background-color: #008e79;
+    background-color: #038197;
+    transform: translateY(-2px);
 }
 
 footer {
@@ -148,7 +168,7 @@ footer {
     }
 
     .hero h2 {
-        font-size: 28px;
+        font-size: 30px;
     }
 
     .hero p {
@@ -160,17 +180,12 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 15px;
-        margin-top: 20px; /* Add some margin for better spacing */
+        margin-top: 20px;
     }
 
     .project {
         width: 90%;
         max-width: 400px;
-    }
-    
-    .project:hover {
-        -webkit-transform: translateY(-10px);
-        transform: translateY(-10px);
     }
 
     button {
