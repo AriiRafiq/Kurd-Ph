@@ -41,7 +41,7 @@ header {
 .header-sketch img {
     width: 150px;
     animation: slideIn 1s ease-out;
-    position: absolute;
+    position: sticky;
     top: 90px;
     right: 0px;
     z-index: 1000;
