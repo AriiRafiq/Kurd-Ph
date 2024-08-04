@@ -104,8 +104,7 @@ button:hover {
 }
 
 .bounce-button {
-    animation: bounce 1s ease infinite;
-    animation-delay: 5s;
+    animation: bounce 2s infinite;
 }
 
 /* Footer Section */
