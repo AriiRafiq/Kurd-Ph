@@ -255,10 +255,7 @@ footer a:hover {
 
     .calculator {
         padding: 20px;
-        max-width: 100%;
-        /* Add margin to the left and right for mobile view */
-        margin-left: 10px;
-        margin-right: 10px;
+        max-width: 90%;
     }
 
     button {
