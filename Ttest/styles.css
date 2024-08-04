@@ -248,14 +248,12 @@ footer a:hover {
     main {
         margin-top: 0;
         padding: 20px;
-        /* Add horizontal padding for mobile view */
-        padding-left: 10px;
-        padding-right: 10px;
     }
 
     .calculator {
         padding: 20px;
-        max-width: 90%;
+        margin: 0 10px; /* Adjust the margin as needed */
+        max-width: calc(100% - 20px); /* Ensures container is smaller than 100% width */
     }
 
     button {
