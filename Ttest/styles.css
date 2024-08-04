@@ -254,6 +254,7 @@ footer a:hover {
         padding: 20px;
         margin: 0 10px; /* Adjust the margin as needed */
         max-width: calc(100% - 20px); /* Ensures container is smaller than 100% width */
+        justify-content: center;
     }
 
     button {
