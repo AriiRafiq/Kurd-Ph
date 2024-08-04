@@ -38,13 +38,15 @@ header {
     color: #fff;
 }
 
-.header-sketch img {
-    width: 150px;
-    animation: slideIn 1s ease-out;
+.header-sketch {
     position: sticky;
     top: 90px;
     right: 0px;
-    z-index: 1000;
+    z-index: 1000; /* Ensure this is higher than the overlay */
+}
+
+.header-sketch img {
+    width: 150px;
 }
 
 /* Main Section */
