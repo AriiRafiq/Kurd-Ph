@@ -244,6 +244,10 @@ footer a:hover {
     .header-sketch img {
         width: 100px;
         margin-top: 20px;
+        position: relative;
+        display: block;
+        z-index: 1000;
+        right: 0px;
     }
 
     main {
