@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syrup Dose Calculator</title>
+    <link rel="icon" href="https://i.ibb.co/6bYbqdR/vitamin-Icon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <h1 class="fade-in">Vit D3 Dose Calculator</h1>
+            <p class="fade-in">Calculate the correct dose of Vitamin D3 for your patients easily.</p>
+        </div>
+        <div class="header-sketch">
+            <img src="https://i.ibb.co/41DL1gz/4814268.png" alt="Sketch" class="slide-in">
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="calculator fade-in-up">
+            <h2>Patient Information</h2>
+            <label for="ageBox">Age</label>
+            <input type="number" inputmode="numeric" id="ageBox" placeholder="Enter age">
+            <label for="weightBox">Patient's Weight (Kg)</label>
+            <input type="number" inputmode="numeric" id="weightBox" placeholder="Enter weight">
+
+            <h2 id="secondLabel">Vit D3 Dose</h2>
+            <label for="vitBox">Current Vitamin D3 Blood Level (ng/mL)</label>
+            <input type="number" inputmode="numeric" id="vitBox" placeholder="Enter vit D3 level">
+            <button id="calculateButton" class="bounce-button">Calculate Dose</button>
+            <label id="resultLabel"></label>
+            <label id="dayResultLabel"></label>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="fade-in-up">
+        <p>2024 - © All rights reserved to the developer <a href="https://t.me/AriRafiq" target="_blank">Ari</a></p>
+    </footer>
+
+    <!-- Disclaimer Modal -->
+    <div class="modal" id="disclaimerModal">
+        <div class="modal-content">
+            <p>Disclaimer: This website is for informational purposes only and does not replace professional medical advice, diagnosis, or treatment.</p>
+            <button class="close-btn" id="closeModalBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
