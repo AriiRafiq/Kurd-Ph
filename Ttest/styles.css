@@ -252,9 +252,13 @@ footer a:hover {
 
     .calculator {
         padding: 20px;
-        margin: 0 10px; /* Adjust the margin as needed */
-        max-width: calc(100% - 20px); /* Ensures container is smaller than 100% width */
+        margin: 0 10px;
+        max-width: calc(100% - 20px);
         justify-content: center;
+    }
+    
+    input {
+        max-width: calc(100% - 20px);
     }
 
     button {
