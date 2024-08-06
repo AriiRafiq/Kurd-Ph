@@ -529,3 +529,57 @@ input:checked + .slider:before {
     from { opacity: 1; }
     to { opacity: 0; }
 }
+
+/* Adjusting layout for mobile */
+@media (max-width: 600px) {
+    /* Adjust general message box style for mobile */
+    .message-box {
+        font-size: 10px; /* Smaller font size for mobile */
+        padding: 4px 10px;
+        white-space: normal; /* Allow line breaks */
+        transform: translateY(0); /* Reset transform */
+    }
+
+    /* Specific Positioning for Each Message Box on mobile */
+    #messageBox {
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    #messageBox1 {
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    #messageBox2 {
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    #messageBox3 {
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    #messageBox4 {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    #messageBox5 {
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    #messageBox6 {
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
