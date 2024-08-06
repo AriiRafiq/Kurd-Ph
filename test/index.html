@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <title>Syrup Dose Calculator</title>
+    <link rel="icon" href="https://i.ibb.co/2YLM4JT/syrup-Icon.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://i.ibb.co/Mhz8hXy/syrup-Icon120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://i.ibb.co/mD27fZ9/syrup-Icon152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://i.ibb.co/ftcVcRF/syrup-Icon167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/jw7P31R/syrup-Icon180.png">
+    <link rel="icon" sizes="192x192" href="https://i.ibb.co/LQXPZSL/syrup-Icon192.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Stars Canvas -->
+    <div class="stars"></div>
+	
+	<!-- Message Boxes -->
+	<div id="messageBox" class="message-box">Click the title to clear all.</div>
+	<div id="messageBox1" class="message-box">Enter the patient's age when weight is unknown.</div>
+	<div id="messageBox2" class="message-box">Select the correct gender for your patient.</div>
+	<div id="messageBox3" class="message-box">Click to calculate the assumed weight of the patient.</div>
+	<div id="messageBox4" class="message-box">Enter the patient's weight when it is known.</div>
+	<div id="messageBox5" class="message-box">Select the medication prescribed to your patient.</div>
+	<div id="messageBox6" class="message-box">Select the dose of the syrup you have available.</div>
+
+
+    <div class="container">
+	    <h1 id="title">Syrup Dose Calculator</h1>
+
+        <h2>Patient Information</h2>
+        <label for="ageBox">Age</label>
+        <input type="number" inputmode="numeric" id="ageBox" placeholder="Enter age">
+		<div class="toggle-container">
+			<label class="toggle-label">Gender:</label>
+			<label class="switch">
+			<input type="checkbox" id="genderToggle">
+			<span class="slider"></span>
+			</label>
+			<span id="genderLabel">Male</span>
+		</div>
+        <button id="calculateButton">Calculate Weight</button>
+        <label for="weightBox">Patient's Weight</label>
+        <input type="number" inputmode="numeric" id="weightBox" placeholder="Enter weight">
+
+        <h2>Syrup Dose</h2>
+        <label for="medicationList">Medication</label>
+        <select id="medicationList">
+            <option value="" selected disabled hidden>Select Medication</option>
+        </select>
+        <label for="doseList">Dose</label>
+        <select id="doseList">
+            <option value="" selected disabled hidden>Select Dose</option>
+        </select>
+        <button id="calculateButton1">Calculate Dose</button>
+        <label id="resultLabel1"></label>
+        <label id="frequencyLabel"></label>
+    </div>
+
+	<footer> <p>2024 - © All rights reserved to the developer <a href="https://t.me/AriRafiq" target="_blank">Ari</a> </p>    </footer>
+	
+	<!-- Notification Modal -->
+	<div class="modal" id="notificationModal">
+		<div class="modal-content">
+			<p>It is recommended to use tablet dosage forms rather than syrups for children above the age of 12 years.</p>
+        		<button class="close-btn" id="closeNotificationBtn">Close</button>
+		</div>
+	</div>
+        
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <h2>Settings</h2>
+            <div id="medicationSettings">
+                <div class="medication-header">
+                    <span>Medication</span>
+                    <span>Value (mg/kg/dose)</span>
+                </div>
+            </div>
+			<button class="default-btn" id="defaultValuesBtn">Default Values</button>
+            <button class="save-btn" id="saveSettingsBtn">Save</button>
+            <button class="close-btn" id="closeSettingsModalBtn">Close</button>
+        </div>
+    </div>
+    
+    <!-- Disclaimer Modal -->
+    <div class="modal" id="disclaimerModal">
+        <div class="modal-content">
+            <p>Disclaimer: This website is for informational purposes only and does not replace professional medical advice, diagnosis, or treatment. The content provided here is intended to enhance understanding of pediatric medications, but should not be used as a substitute for the expertise, knowledge, and judgment of healthcare professionals.</p>
+            <button class="close-btn" id="closeModalBtn">Close</button>
+        </div>
+    </div>
+	
+	<!-- Menu-button -->
+	<div id="menu-button" class="menu-button">&#9776;</div>
+
+	<!-- Side-menu -->
+	<div id="side-menu" class="side-menu">
+	    <button onclick="location.href='https://kurdph.com'">Home</button>
+	    <button id="settingsButton">Settings</button>
+		<button id="instructionsButton">Instructions</button>
+	    <button id="disclaimerButton">Disclaimer</button>
+	    <button onclick="location.href='https://kurdph.com/AboutMe'">About Me</button>
+	</div>
+		
+    <script src="stars.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
