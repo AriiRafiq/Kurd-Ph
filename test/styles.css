@@ -532,12 +532,10 @@ input:checked + .slider:before {
 
 /* Adjusting layout for mobile */
 @media (max-width: 600px) {
-    /* Adjust general message box style for mobile */
     .message-box {
-        font-size: 10px; /* Smaller font size for mobile */
-        padding: 4px 14px;
-        white-space: normal; /* Allow line breaks */
-        transform: translateY(0); /* Reset transform */
+        font-size: 10px;
+        padding: 4px 10px;
+        transform: translateY(0);
     }
 
     /* Specific Positioning for Each Message Box on mobile */
