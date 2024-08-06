@@ -429,85 +429,9 @@ input:checked + .slider:before {
     background: #555;
 }
 
-/* General Message Box Style */
-.message-box {
-    display: none;
-    position: absolute;
-    background: white;
-    color: #black;
-    padding: 4px 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: 'Comic Sans MS', sans-serif;
-    font-size: 12px;
-    transform: translateY(0);
-    z-index: 1009;
-    opacity: 1;
-    white-space: nowrap;
-}
-
-/* Specific Positioning for Each Message Box */
-#messageBox {
-    top: 10.7%;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-#messageBox1 {
-    top: 27.5%;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-#messageBox2 {
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-#messageBox3 {
-    top: 42.4%;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-#messageBox4 {
-    top: 52.5%;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-#messageBox5 {
-    top: 71%;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-#messageBox6 {
-    top: 83.3%;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-/* Typing Effect */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-/* Fade-out Effect */
-.fade-out {
-    animation: fadeOut 1s forwards;
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
 /* Adjusting layout for mobile */
-@media (max-width: 600px) {
-	body, html {
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+    body, html {
     	height: 100%;
     	margin: 0;
     	font-family: Arial, sans-serif;
@@ -535,51 +459,4 @@ input:checked + .slider:before {
     	direction: ltr;
     	overflow: auto;
 	}
-	
-    .message-box {
-        font-size: 11px;
-    }
-
-    /* Specific Positioning for Each Message Box on mobile */
-    #messageBox {
-        margin-top: 19px;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
-
-    #messageBox1 {
-        margin-top: 20px;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
-
-    #messageBox2 {
-        margin-top: 19.5px;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
-
-    #messageBox3 {
-        margin-top: 21.7px;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
-
-    #messageBox4 {
-        margin-top: 24px;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
-
-    #messageBox5 {
-        margin-top: 26px;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
-
-    #messageBox6 {
-        margin-top: 26.5px;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
 }
