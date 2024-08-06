@@ -535,7 +535,7 @@ input:checked + .slider:before {
     /* Adjust general message box style for mobile */
     .message-box {
         font-size: 10px; /* Smaller font size for mobile */
-        padding: 4px 10px;
+        padding: 4px 14px;
         white-space: normal; /* Allow line breaks */
         transform: translateY(0); /* Reset transform */
     }
