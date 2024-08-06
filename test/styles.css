@@ -1074,43 +1074,43 @@ input:checked + .slider:before {
 
     /* Specific Positioning for Each Message Box on mobile */
     #messageBox {
-        top: 10%;
+        top: 13.3%;
         left: 50%;
         transform: translate(-50%, 0);
     }
 
     #messageBox1 {
-        top: 20%;
+        top: 31%;
         left: 50%;
         transform: translate(-50%, 0);
     }
 
     #messageBox2 {
-        top: 30%;
+        top: 38.8%;
         left: 50%;
         transform: translate(-50%, 0);
     }
 
     #messageBox3 {
-        top: 40%;
+        top: 46.5%;
         left: 50%;
         transform: translate(-50%, 0);
     }
 
     #messageBox4 {
-        top: 50%;
+        top: 57.4%;
         left: 50%;
         transform: translate(-50%, 0);
     }
 
     #messageBox5 {
-        top: 60%;
+        top: 71%;
         left: 50%;
         transform: translate(-50%, 0);
     }
 
     #messageBox6 {
-        top: 70%;
+        top: 82%;
         left: 50%;
         transform: translate(-50%, 0);
     }
