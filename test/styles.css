@@ -1069,7 +1069,7 @@ input:checked + .slider:before {
 	}
 	
     .message-box {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     /* Specific Positioning for Each Message Box on mobile */
