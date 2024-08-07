@@ -162,30 +162,30 @@ function addBounceAnimation(element) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const ageBox = document.getElementById('ageBox');
-    const weightBox = document.getElementById('weightBox');
-    const calculateButton = document.getElementById('calculateButton');
-    const medicationList = document.getElementById('medicationList');
-    const doseList = document.getElementById('doseList');
-    const calculateButton1 = document.getElementById('calculateButton1');
-    const resultLabel1 = document.getElementById('resultLabel1');
-    const frequencyLabel = document.getElementById('frequencyLabel');
-    const disclaimerModal = document.getElementById('disclaimerModal');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const settingsModal = document.getElementById('settingsModal');
-    const closeSettingsModalBtn = document.getElementById('closeSettingsModalBtn');
-    const saveSettingsBtn = document.getElementById('saveSettingsBtn');
-    const medicationSettings = document.getElementById('medicationSettings');
-    const defaultValuesBtn = document.getElementById('defaultValuesBtn');
-    const genderToggle = document.getElementById('genderToggle');
-    const genderLabel = document.getElementById('genderLabel');
-    const notificationModal = document.getElementById('notificationModal');
-    const closeNotificationBtn = document.getElementById('closeNotificationBtn');
-    const settingsButton = document.getElementById('settingsButton');
-    const disclaimerButton = document.getElementById('disclaimerButton');
-    const sideMenu = document.getElementById('side-menu');
-    const menuButton = document.getElementById('menu-button');
-    const title = document.getElementById('title');
+	const ageBox = document.getElementById('ageBox');
+	const weightBox = document.getElementById('weightBox');
+	const calculateButton = document.getElementById('calculateButton');
+	const medicationList = document.getElementById('medicationList');
+	const doseList = document.getElementById('doseList');
+	const calculateButton1 = document.getElementById('calculateButton1');
+	const resultLabel1 = document.getElementById('resultLabel1');
+	const frequencyLabel = document.getElementById('frequencyLabel');
+	const disclaimerModal = document.getElementById('disclaimerModal');
+	const closeModalBtn = document.getElementById('closeModalBtn');
+	const settingsModal = document.getElementById('settingsModal');
+	const closeSettingsModalBtn = document.getElementById('closeSettingsModalBtn');
+	const saveSettingsBtn = document.getElementById('saveSettingsBtn');
+	const medicationSettings = document.getElementById('medicationSettings');
+	const defaultValuesBtn = document.getElementById('defaultValuesBtn');
+	const genderToggle = document.getElementById('genderToggle');
+	const genderLabel = document.getElementById('genderLabel');
+	const notificationModal = document.getElementById('notificationModal');
+	const closeNotificationBtn = document.getElementById('closeNotificationBtn');
+	const settingsButton = document.getElementById('settingsButton');
+	const disclaimerButton = document.getElementById('disclaimerButton');
+	const sideMenu = document.getElementById('side-menu');
+	const menuButton = document.getElementById('menu-button');
+	const title = document.getElementById('title');
 	const inMemoryStorage = {};
 	
 	// Load medication values from local storage if available
