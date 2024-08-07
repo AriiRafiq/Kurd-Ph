@@ -186,14 +186,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const sideMenu = document.getElementById('side-menu');
     const menuButton = document.getElementById('menu-button');
     const title = document.getElementById('title');
+	const inMemoryStorage = {};
 	
 	// Load medication values from local storage if available
-	const savedMedicationValues = localStorage.getItem('medicationValues');
+	let savedMedicationValues;
+	try {
+		savedMedicationValues = localStorage.getItem('medicationValues');
+	} catch (e) {
+		savedMedicationValues = inMemoryStorage['medicationValues'];
+	}
+
 	if (savedMedicationValues) {
 		Object.assign(medicationValues, JSON.parse(savedMedicationValues));
-		console.log('Loaded medication values from localStorage:', medicationValues);
+		console.log('Loaded medication values:', medicationValues);
 	}
-	
+
 	function loadMedicationSettings() {
 		medicationSettings.innerHTML = `
 			<div class="medication-header">
@@ -221,8 +228,14 @@ document.addEventListener('DOMContentLoaded', () => {
 				medicationValues[medication] = value;
 			}
 		});
+
+	try {
 		localStorage.setItem('medicationValues', JSON.stringify(medicationValues));
-		console.log('Medication values saved:', medicationValues);
+	} catch (e) {
+		inMemoryStorage['medicationValues'] = JSON.stringify(medicationValues);
+	}
+
+	console.log('Medication values saved:', medicationValues);
 	}
 
 	defaultValuesBtn.addEventListener('click', () => {
@@ -231,9 +244,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 	function resetMedicationValuesToDefault() {
 		Object.assign(medicationValues, defaultMedicationValues);
+
+	try {
 		localStorage.setItem('medicationValues', JSON.stringify(medicationValues));
-		loadMedicationSettings();
-		console.log('Medication values reset to default:', medicationValues);
+	} catch (e) {
+		inMemoryStorage['medicationValues'] = JSON.stringify(medicationValues);
+	}
+
+	loadMedicationSettings();
+	console.log('Medication values reset to default:', medicationValues);
 	}
 	
 	// Populate medication list when focused
