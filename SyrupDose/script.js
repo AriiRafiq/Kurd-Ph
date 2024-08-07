@@ -193,35 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		Object.assign(medicationValues, JSON.parse(savedMedicationValues));
 		console.log('Loaded medication values from localStorage:', medicationValues);
 	}
-
-	// Populate medication list when focused
-	medicationList.addEventListener('focus', () => {
-		if (medicationList.options.length === 1) { // Only the initial empty option exists
-			Object.keys(medicationValues).forEach(medication => {
-				const option = document.createElement('option');
-				option.value = medication;
-				option.textContent = medication;
-				medicationList.appendChild(option);
-			});
-		}
-	});
-	
-	// Update dose list and reset result when medication changes
-	medicationList.addEventListener('change', () => {
-		doseList.innerHTML = '<option value="" selected disabled hidden></option>'; // Reset doseList
-		resultLabel1.textContent = '';
-		frequencyLabel.textContent = '';
-		const selectedMedication = medicationList.value;
-			if (selectedMedication) {
-				medicationDoses[selectedMedication].forEach(dose => {
-					const option = document.createElement('option');
-					option.value = dose;
-					option.textContent = dose;
-					doseList.appendChild(option);
-					});
-			}
-		addBounceAnimation(doseList);
-	});
 	
 	function loadMedicationSettings() {
 		medicationSettings.innerHTML = `
@@ -264,6 +235,35 @@ document.addEventListener('DOMContentLoaded', () => {
 		loadMedicationSettings();
 		console.log('Medication values reset to default:', medicationValues);
 	}
+	
+	// Populate medication list when focused
+	medicationList.addEventListener('focus', () => {
+		if (medicationList.options.length === 1) { // Only the initial empty option exists
+			Object.keys(medicationValues).forEach(medication => {
+				const option = document.createElement('option');
+				option.value = medication;
+				option.textContent = medication;
+				medicationList.appendChild(option);
+			});
+		}
+	});
+	
+	// Update dose list and reset result when medication changes
+	medicationList.addEventListener('change', () => {
+		doseList.innerHTML = '<option value="" selected disabled hidden></option>'; // Reset doseList
+		resultLabel1.textContent = '';
+		frequencyLabel.textContent = '';
+		const selectedMedication = medicationList.value;
+			if (selectedMedication) {
+				medicationDoses[selectedMedication].forEach(dose => {
+					const option = document.createElement('option');
+					option.value = dose;
+					option.textContent = dose;
+					doseList.appendChild(option);
+					});
+			}
+		addBounceAnimation(doseList);
+	});
 	
 	// Add event listener for the title
 	title.addEventListener('click', () => {
