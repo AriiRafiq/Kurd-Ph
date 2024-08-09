@@ -7,18 +7,18 @@ const settingsModal = document.getElementById('settingsModal');
 const saveBtn = document.getElementById('saveBtn');
 const closeBtn = document.getElementById('closeBtn');
 const sarToIqdInput = document.getElementById('sarToIqd');
-const sarToUsdInput = document.getElementById('sarToUsd');
+const usdToSarInput = document.getElementById('usdToSar');
 const usdToIqdInput = document.getElementById('usdToIqd');
 
 let sarToIqd = 398.15;
-let sarToUsd = 0.26;
+let usdToSar = 3.77;
 let usdToIqd = 1501;
 
 function loadSettings() {
     const savedSettings = JSON.parse(localStorage.getItem('converterSettings'));
     if (savedSettings) {
         sarToIqd = savedSettings.sarToIqd;
-        sarToUsd = savedSettings.sarToUsd;
+        usdToSar = savedSettings.usdToSar;
         usdToIqd = savedSettings.usdToIqd;
     }
     updateSettingsInputs();
@@ -26,15 +26,15 @@ function loadSettings() {
 
 function updateSettingsInputs() {
     sarToIqdInput.value = sarToIqd;
-    sarToUsdInput.value = sarToUsd;
+    usdToSarInput.value = usdToSar;
     usdToIqdInput.value = usdToIqd;
 }
 
 function saveSettings() {
     sarToIqd = parseFloat(sarToIqdInput.value);
-    sarToUsd = parseFloat(sarToUsdInput.value);
+    usdToSar = parseFloat(usdToSarInput.value);
     usdToIqd = parseFloat(usdToIqdInput.value);
-    localStorage.setItem('converterSettings', JSON.stringify({ sarToIqd, sarToUsd, usdToIqd }));
+    localStorage.setItem('converterSettings', JSON.stringify({ sarToIqd, usdToSar, usdToIqd }));
     updateConversion();
 }
 
@@ -49,14 +49,14 @@ function convert(from, value) {
     switch (from) {
         case 'sar':
             iqdInput.value = formatNumber(numValue * sarToIqd);
-            usdInput.value = formatNumber(numValue * sarToUsd);
+            usdInput.value = formatNumber(numValue / usdToSar);
             break;
         case 'iqd':
             sarInput.value = formatNumber(numValue / sarToIqd);
             usdInput.value = formatNumber(numValue / usdToIqd);
             break;
         case 'usd':
-            sarInput.value = formatNumber(numValue / sarToUsd);
+            sarInput.value = formatNumber(numValue * usdToSar);
             iqdInput.value = formatNumber(numValue * usdToIqd);
             break;
     }
