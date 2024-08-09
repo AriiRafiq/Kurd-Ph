@@ -95,6 +95,11 @@ input[type="text"] {
     text-align: center;
 }
 
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
 .setting-group {
     margin-bottom: 1.5rem;
 }
