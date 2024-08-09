@@ -1,3 +1,6 @@
+HTML (index.html):
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,53 +12,45 @@
 <body>
     <header>
         <h1 id="title">Price Converter</h1>
-        <div id="settings-icon">&#9881;</div>
+        <button id="settingsBtn">⚙️</button>
     </header>
-    <div class="container">
-        <div class="currency-input">
-            <label for="sar">Saudi Riyal (SAR):</label>
+    <main>
+        <div class="converter">
             <div class="input-group">
-                <input type="text" id="sar" placeholder="0.00">
-                <span>SAR</span>
+                <input type="text" id="sar" placeholder="0" inputmode="numeric">
+                <span class="currency-symbol">SAR</span>
+            </div>
+            <div class="input-group">
+                <input type="text" id="iqd" placeholder="0" inputmode="numeric">
+                <span class="currency-symbol">IQD</span>
+            </div>
+            <div class="input-group">
+                <input type="text" id="usd" placeholder="0" inputmode="numeric">
+                <span class="currency-symbol">USD</span>
             </div>
         </div>
-        <div class="currency-input">
-            <label for="iqd">Iraqi Dinar (IQD):</label>
-            <div class="input-group">
-                <input type="text" id="iqd" placeholder="0.00">
-                <span>IQD</span>
-            </div>
-        </div>
-        <div class="currency-input">
-            <label for="usd">US Dollar (USD):</label>
-            <div class="input-group">
-                <input type="text" id="usd" placeholder="0.00">
-                <span>USD</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Settings Modal -->
-    <div id="settings-modal" class="modal">
+    </main>
+    <div id="settingsModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Conversion Settings</h2>
-            <label for="sarToIqd">SAR to IQD:</label>
-            <input type="text" id="sarToIqd" placeholder="398.15">
-            
-            <label for="sarToUsd">SAR to USD:</label>
-            <input type="text" id="sarToUsd" placeholder="0.26">
-            
-            <label for="usdToIqd">USD to IQD:</label>
-            <input type="text" id="usdToIqd" placeholder="1501">
-            
-            <div class="modal-buttons">
-                <button id="save-btn">Save</button>
-                <button id="close-btn">Close</button>
+            <h2>Settings</h2>
+            <div class="setting-group">
+                <label for="sarToIqd">SAR to IQD:</label>
+                <input type="number" id="sarToIqd" step="0.01">
+            </div>
+            <div class="setting-group">
+                <label for="sarToUsd">SAR to USD:</label>
+                <input type="number" id="sarToUsd" step="0.01">
+            </div>
+            <div class="setting-group">
+                <label for="usdToIqd">USD to IQD:</label>
+                <input type="number" id="usdToIqd" step="0.01">
+            </div>
+            <div class="button-group">
+                <button id="saveBtn">Save</button>
+                <button id="closeBtn">Close</button>
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
