@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const settingsModal = document.getElementById('settings-modal');
     const settingsIcon = document.getElementById('settings-icon');
-    const saveSettingsBtn = document.getElementById('save-settings');
-    const closeSettingsBtn = document.getElementById('close-settings');
+    const saveSettingsBtn = document.getElementById('save-btn');
+    const closeSettingsBtn = document.getElementById('close-btn');
     const modalCloseSpan = document.querySelector('.close');
 
     let rates = {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     settingsIcon.addEventListener('click', () => {
         updateConversions();
-        settingsModal.style.display = 'block';
+        settingsModal.style.display = 'flex';
     });
 
     saveSettingsBtn.addEventListener('click', () => {
@@ -85,6 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     modalCloseSpan.addEventListener('click', () => {
+
+
         settingsModal.style.display = 'none';
     });
 
@@ -93,7 +95,4 @@ document.addEventListener('DOMContentLoaded', function() {
             settingsModal.style.display = 'none';
         }
     });
-
-    // Initial load
-    updateConversions();
 });
