@@ -1,8 +1,29 @@
-// Initialize exchange rates
+// Fallback in-memory storage
+let inMemoryStorage = {};
+
+// Function to get data from localStorage or in-memory storage
+function getStorageItem(key, defaultValue) {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem(key) !== null) {
+        return parseFloat(localStorage.getItem(key)) || defaultValue;
+    } else {
+        return inMemoryStorage[key] !== undefined ? inMemoryStorage[key] : defaultValue;
+    }
+}
+
+// Function to set data in localStorage or in-memory storage
+function setStorageItem(key, value) {
+    if (typeof localStorage !== 'undefined') {
+        localStorage.setItem(key, value);
+    } else {
+        inMemoryStorage[key] = value;
+    }
+}
+
+// Initialize exchange rates with fallback
 let exchangeRates = {
-    sarToIqd: parseFloat(localStorage.getItem('sarToIqd')) || 398.15,
-    sarToUsd: parseFloat(localStorage.getItem('sarToUsd')) || 0.26,
-    usdToIqd: parseFloat(localStorage.getItem('usdToIqd')) || 1501
+    sarToIqd: getStorageItem('sarToIqd', 398.15),
+    sarToUsd: getStorageItem('sarToUsd', 0.26),
+    usdToIqd: getStorageItem('usdToIqd', 1501)
 };
 
 const sarInput = document.getElementById('sar');
@@ -14,6 +35,16 @@ const saveBtn = document.getElementById('save-btn');
 const closeBtn = document.getElementById('close-btn');
 
 let timeout = null;
+
+// Function to format numbers with commas
+function formatNumber(num) {
+    return num.toLocaleString('en-US', { maximumFractionDigits: 2 });
+}
+
+// Remove commas from formatted number
+function removeCommas(num) {
+    return num.replace(/,/g, '');
+}
 
 // Convert and update the fields
 function convertCurrency(source, amount) {
@@ -33,10 +64,10 @@ function convertCurrency(source, amount) {
         iqd = usd * exchangeRates.usdToIqd;
     }
 
-    // Update input fields with the converted values
-    if (!isNaN(sar)) sarInput.value = sar % 1 === 0 ? sar : sar.toFixed(2);
-    if (!isNaN(iqd)) iqdInput.value = iqd % 1 === 0 ? iqd : iqd.toFixed(2);
-    if (!isNaN(usd)) usdInput.value = usd % 1 === 0 ? usd : usd.toFixed(2);
+    // Update input fields with the converted values and formatted with commas
+    if (!isNaN(sar)) sarInput.value = formatNumber(sar);
+    if (!isNaN(iqd)) iqdInput.value = formatNumber(iqd);
+    if (!isNaN(usd)) usdInput.value = formatNumber(usd);
 }
 
 // Debounce function to delay the conversion
@@ -49,7 +80,7 @@ function debounceConvertCurrency(source, amount) {
 
 // Event listeners for input fields
 sarInput.addEventListener('input', () => {
-    const value = sarInput.value;
+    const value = removeCommas(sarInput.value);
     if (value !== '') {
         debounceConvertCurrency('SAR', parseFloat(value));
     } else {
@@ -59,7 +90,7 @@ sarInput.addEventListener('input', () => {
 });
 
 iqdInput.addEventListener('input', () => {
-    const value = iqdInput.value;
+    const value = removeCommas(iqdInput.value);
     if (value !== '') {
         debounceConvertCurrency('IQD', parseFloat(value));
     } else {
@@ -69,7 +100,7 @@ iqdInput.addEventListener('input', () => {
 });
 
 usdInput.addEventListener('input', () => {
-    const value = usdInput.value;
+    const value = removeCommas(usdInput.value);
     if (value !== '') {
         debounceConvertCurrency('USD', parseFloat(value));
     } else {
@@ -104,9 +135,9 @@ saveBtn.addEventListener('click', () => {
     exchangeRates.sarToUsd = parseFloat(document.getElementById('sar-to-usd').value);
     exchangeRates.usdToIqd = parseFloat(document.getElementById('usd-to-iqd').value);
 
-    localStorage.setItem('sarToIqd', exchangeRates.sarToIqd);
-    localStorage.setItem('sarToUsd', exchangeRates.sarToUsd);
-    localStorage.setItem('usdToIqd', exchangeRates.usdToIqd);
+    setStorageItem('sarToIqd', exchangeRates.sarToIqd);
+    setStorageItem('sarToUsd', exchangeRates.sarToUsd);
+    setStorageItem('usdToIqd', exchangeRates.usdToIqd);
 
     settingsModal.style.display = 'none';
 });
