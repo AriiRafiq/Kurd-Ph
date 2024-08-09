@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Price Converter</h1>
+        <div id="settings-icon">&#9881;</div>
+    </header>
+    <main>
+        <div class="converter">
+            <label for="sar">SAR:</label>
+            <input type="text" id="sar" placeholder="0.00">
+            
+            <label for="iqd">IQD:</label>
+            <input type="text" id="iqd" placeholder="0.00">
+            
+            <label for="usd">USD:</label>
+            <input type="text" id="usd" placeholder="0.00">
+        </div>
+    </main>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Conversion Settings</h2>
+            <label for="sarToIqd">SAR to IQD:</label>
+            <input type="text" id="sarToIqd" placeholder="398.15">
+            
+            <label for="sarToUsd">SAR to USD:</label>
+            <input type="text" id="sarToUsd" placeholder="0.26">
+            
+            <label for="usdToIqd">USD to IQD:</label>
+            <input type="text" id="usdToIqd" placeholder="1501">
+            
+            <div class="modal-buttons">
+                <button id="save-settings">Save</button>
+                <button id="close-settings">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
