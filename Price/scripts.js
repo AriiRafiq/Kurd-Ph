@@ -1,29 +1,8 @@
-// Fallback in-memory storage
-let inMemoryStorage = {};
-
-// Function to get data from localStorage or in-memory storage
-function getStorageItem(key, defaultValue) {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem(key) !== null) {
-        return parseFloat(localStorage.getItem(key)) || defaultValue;
-    } else {
-        return inMemoryStorage[key] !== undefined ? inMemoryStorage[key] : defaultValue;
-    }
-}
-
-// Function to set data in localStorage or in-memory storage
-function setStorageItem(key, value) {
-    if (typeof localStorage !== 'undefined') {
-        localStorage.setItem(key, value);
-    } else {
-        inMemoryStorage[key] = value;
-    }
-}
-
-// Initialize exchange rates with fallback
+// Initialize exchange rates
 let exchangeRates = {
-    sarToIqd: getStorageItem('sarToIqd', 398.15),
-    sarToUsd: getStorageItem('sarToUsd', 0.26),
-    usdToIqd: getStorageItem('usdToIqd', 1501)
+    sarToIqd: parseFloat(localStorage.getItem('sarToIqd')) || 398.15,
+    sarToUsd: parseFloat(localStorage.getItem('sarToUsd')) || 0.26,
+    usdToIqd: parseFloat(localStorage.getItem('usdToIqd')) || 1501
 };
 
 const sarInput = document.getElementById('sar');
@@ -135,9 +114,9 @@ saveBtn.addEventListener('click', () => {
     exchangeRates.sarToUsd = parseFloat(document.getElementById('sar-to-usd').value);
     exchangeRates.usdToIqd = parseFloat(document.getElementById('usd-to-iqd').value);
 
-    setStorageItem('sarToIqd', exchangeRates.sarToIqd);
-    setStorageItem('sarToUsd', exchangeRates.sarToUsd);
-    setStorageItem('usdToIqd', exchangeRates.usdToIqd);
+    localStorage.setItem('sarToIqd', exchangeRates.sarToIqd);
+    localStorage.setItem('sarToUsd', exchangeRates.sarToUsd);
+    localStorage.setItem('usdToIqd', exchangeRates.usdToIqd);
 
     settingsModal.style.display = 'none';
 });
