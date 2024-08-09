@@ -26,8 +26,9 @@ main {
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Change from center to flex-start */
     padding: 2rem;
+    padding-top: 1rem; /* Add this line to reduce top padding */
 }
 
 .converter {
