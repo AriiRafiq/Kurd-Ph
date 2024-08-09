@@ -91,7 +91,7 @@ closeBtn.addEventListener('click', () => {
     settingsModal.style.display = 'none';
 });
 
-window.addEventListener('click', (e) => {
+document.addEventListener('click', (e) => {
     if (e.target === settingsModal) {
         settingsModal.style.display = 'none';
     }
