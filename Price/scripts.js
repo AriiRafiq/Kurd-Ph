@@ -2,7 +2,7 @@
 let exchangeRates = {
     sarToIqd: parseFloat(localStorage.getItem('sarToIqd')) || 398.15,
     sarToUsd: parseFloat(localStorage.getItem('sarToUsd')) || 0.26,
-    iqdToUsd: parseFloat(localStorage.getItem('iqdToUsd')) || 0.000666222518321,
+    usdToIqd: parseFloat(localStorage.getItem('usdToIqd')) || 1501
 };
 
 const sarInput = document.getElementById('sar');
@@ -26,11 +26,11 @@ function convertCurrency(source, amount) {
     } else if (source === 'IQD') {
         iqd = amount;
         sar = iqd / exchangeRates.sarToIqd;
-        usd = iqd * exchangeRates.iqdToUsd;
+        usd = iqd / exchangeRates.usdToIqd;
     } else if (source === 'USD') {
         usd = amount;
         sar = usd / exchangeRates.sarToUsd;
-        iqd = usd / exchangeRates.iqdToUsd;
+        iqd = usd * exchangeRates.usdToIqd;
     }
 
     // Update input fields with the converted values
@@ -89,7 +89,7 @@ document.getElementById('title').addEventListener('click', () => {
 settingsIcon.addEventListener('click', () => {
     document.getElementById('sar-to-iqd').value = exchangeRates.sarToIqd;
     document.getElementById('sar-to-usd').value = exchangeRates.sarToUsd;
-    document.getElementById('iqd-to-usd').value = exchangeRates.iqdToUsd;
+    document.getElementById('usd-to-iqd').value = exchangeRates.usdToIqd;
     settingsModal.style.display = 'flex';
 });
 
@@ -102,11 +102,11 @@ closeBtn.addEventListener('click', () => {
 saveBtn.addEventListener('click', () => {
     exchangeRates.sarToIqd = parseFloat(document.getElementById('sar-to-iqd').value);
     exchangeRates.sarToUsd = parseFloat(document.getElementById('sar-to-usd').value);
-    exchangeRates.iqdToUsd = parseFloat(document.getElementById('iqd-to-usd').value);
+    exchangeRates.usdToIqd = parseFloat(document.getElementById('usd-to-iqd').value);
 
     localStorage.setItem('sarToIqd', exchangeRates.sarToIqd);
     localStorage.setItem('sarToUsd', exchangeRates.sarToUsd);
-    localStorage.setItem('iqdToUsd', exchangeRates.iqdToUsd);
+    localStorage.setItem('usdToIqd', exchangeRates.usdToIqd);
 
     settingsModal.style.display = 'none';
 });
