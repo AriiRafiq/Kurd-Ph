@@ -1,98 +1,93 @@
-// script.js
-document.addEventListener('DOMContentLoaded', function() {
-    const sarInput = document.getElementById('sar');
-    const iqdInput = document.getElementById('iqd');
-    const usdInput = document.getElementById('usd');
+const sarInput = document.getElementById('sar');
+const iqdInput = document.getElementById('iqd');
+const usdInput = document.getElementById('usd');
+const title = document.getElementById('title');
+const settingsBtn = document.getElementById('settingsBtn');
+const settingsModal = document.getElementById('settingsModal');
+const saveBtn = document.getElementById('saveBtn');
+const closeBtn = document.getElementById('closeBtn');
+const sarToIqdInput = document.getElementById('sarToIqd');
+const sarToUsdInput = document.getElementById('sarToUsd');
+const usdToIqdInput = document.getElementById('usdToIqd');
 
-    const sarToIqdInput = document.getElementById('sarToIqd');
-    const sarToUsdInput = document.getElementById('sarToUsd');
-    const usdToIqdInput = document.getElementById('usdToIqd');
+let sarToIqd = 398.15;
+let sarToUsd = 0.26;
+let usdToIqd = 1501;
 
-    const settingsModal = document.getElementById('settings-modal');
-    const settingsIcon = document.getElementById('settings-icon');
-    const saveSettingsBtn = document.getElementById('save-btn');
-    const closeSettingsBtn = document.getElementById('close-btn');
-    const modalCloseSpan = document.querySelector('.close');
-
-    let rates = {
-        sarToIqd: parseFloat(localStorage.getItem('sarToIqd')) || 398.15,
-        sarToUsd: parseFloat(localStorage.getItem('sarToUsd')) || 0.26,
-        usdToIqd: parseFloat(localStorage.getItem('usdToIqd')) || 1501
-    };
-
-    function updateConversions() {
-        sarToIqdInput.value = rates.sarToIqd;
-        sarToUsdInput.value = rates.sarToUsd;
-        usdToIqdInput.value = rates.usdToIqd;
+function loadSettings() {
+    const savedSettings = JSON.parse(localStorage.getItem('converterSettings'));
+    if (savedSettings) {
+        sarToIqd = savedSettings.sarToIqd;
+        sarToUsd = savedSettings.sarToUsd;
+        usdToIqd = savedSettings.usdToIqd;
     }
+    updateSettingsInputs();
+}
 
-    function formatNumber(value) {
-        return value.toLocaleString();
+function updateSettingsInputs() {
+    sarToIqdInput.value = sarToIqd;
+    sarToUsdInput.value = sarToUsd;
+    usdToIqdInput.value = usdToIqd;
+}
+
+function saveSettings() {
+    sarToIqd = parseFloat(sarToIqdInput.value);
+    sarToUsd = parseFloat(sarToUsdInput.value);
+    usdToIqd = parseFloat(usdToIqdInput.value);
+    localStorage.setItem('converterSettings', JSON.stringify({ sarToIqd, sarToUsd, usdToIqd }));
+}
+
+function formatNumber(num) {
+    return num.toLocaleString('en-US', { maximumFractionDigits: 2 });
+}
+
+function convert(from, value) {
+    const numValue = parseFloat(value.replace(/,/g, ''));
+    if (isNaN(numValue)) return;
+
+    switch (from) {
+        case 'sar':
+            iqdInput.value = formatNumber(numValue * sarToIqd);
+            usdInput.value = formatNumber(numValue * sarToUsd);
+            break;
+        case 'iqd':
+            sarInput.value = formatNumber(numValue / sarToIqd);
+            usdInput.value = formatNumber((numValue / sarToIqd) * sarToUsd);
+            break;
+        case 'usd':
+            sarInput.value = formatNumber(numValue / sarToUsd);
+            iqdInput.value = formatNumber(numValue * usdToIqd);
+            break;
     }
+}
 
-    function convertCurrency(event) {
-        const inputId = event.target.id;
-        let sarValue, iqdValue, usdValue;
+sarInput.addEventListener('input', (e) => convert('sar', e.target.value));
+iqdInput.addEventListener('input', (e) => convert('iqd', e.target.value));
+usdInput.addEventListener('input', (e) => convert('usd', e.target.value));
 
-        if (inputId === 'sar') {
-            sarValue = parseFloat(sarInput.value.replace(/,/g, '')) || 0;
-            iqdValue = sarValue * rates.sarToIqd;
-            usdValue = sarValue * rates.sarToUsd;
-        } else if (inputId === 'iqd') {
-            iqdValue = parseFloat(iqdInput.value.replace(/,/g, '')) || 0;
-            sarValue = iqdValue / rates.sarToIqd;
-            usdValue = sarValue * rates.sarToUsd;
-        } else if (inputId === 'usd') {
-            usdValue = parseFloat(usdInput.value.replace(/,/g, '')) || 0;
-            sarValue = usdValue / rates.sarToUsd;
-            iqdValue = usdValue * rates.usdToIqd;
-        }
-
-        sarInput.value = formatNumber(sarValue.toFixed(2));
-        iqdInput.value = formatNumber(iqdValue.toFixed(2));
-        usdInput.value = formatNumber(usdValue.toFixed(2));
-    }
-
-    sarInput.addEventListener('input', convertCurrency);
-    iqdInput.addEventListener('input', convertCurrency);
-    usdInput.addEventListener('input', convertCurrency);
-
-    document.getElementById('title').addEventListener('click', () => {
-        sarInput.value = '';
-        iqdInput.value = '';
-        usdInput.value = '';
-    });
-
-    settingsIcon.addEventListener('click', () => {
-        updateConversions();
-        settingsModal.style.display = 'flex';
-    });
-
-    saveSettingsBtn.addEventListener('click', () => {
-        rates.sarToIqd = parseFloat(sarToIqdInput.value) || rates.sarToIqd;
-        rates.sarToUsd = parseFloat(sarToUsdInput.value) || rates.sarToUsd;
-        rates.usdToIqd = parseFloat(usdToIqdInput.value) || rates.usdToIqd;
-
-        localStorage.setItem('sarToIqd', rates.sarToIqd);
-        localStorage.setItem('sarToUsd', rates.sarToUsd);
-        localStorage.setItem('usdToIqd', rates.usdToIqd);
-
-        settingsModal.style.display = 'none';
-    });
-
-    closeSettingsBtn.addEventListener('click', () => {
-        settingsModal.style.display = 'none';
-    });
-
-    modalCloseSpan.addEventListener('click', () => {
-
-
-        settingsModal.style.display = 'none';
-    });
-
-    window.addEventListener('click', (event) => {
-        if (event.target === settingsModal) {
-            settingsModal.style.display = 'none';
-        }
-    });
+title.addEventListener('click', () => {
+    sarInput.value = '';
+    iqdInput.value = '';
+    usdInput.value = '';
 });
+
+settingsBtn.addEventListener('click', () => {
+    settingsModal.style.display = 'block';
+});
+
+saveBtn.addEventListener('click', () => {
+    saveSettings();
+    settingsModal.style.display = 'none';
+});
+
+closeBtn.addEventListener('click', () => {
+    settingsModal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === settingsModal) {
+        settingsModal.style.display = 'none';
+    }
+});
+
+loadSettings();
