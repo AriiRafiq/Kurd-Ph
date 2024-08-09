@@ -71,7 +71,7 @@ input[type="text"] {
 }
 
 #settingsBtn:hover {
-    color: #007bff;
+    color: #4a90e2;
 }
 
 .modal {
@@ -124,7 +124,7 @@ button {
     padding: 0.6rem 1.2rem;
     font-size: 1rem;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #4a90e2;
     color: white;
     border: none;
     border-radius: 6px;
@@ -132,5 +132,5 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #357ABD;
 }
