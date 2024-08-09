@@ -35,7 +35,7 @@ function saveSettings() {
     sarToUsd = parseFloat(sarToUsdInput.value);
     usdToIqd = parseFloat(usdToIqdInput.value);
     localStorage.setItem('converterSettings', JSON.stringify({ sarToIqd, sarToUsd, usdToIqd }));
-    updateConversion(); // Add this line to update the conversion immediately
+    updateConversion();
 }
 
 function formatNumber(num) {
@@ -53,7 +53,7 @@ function convert(from, value) {
             break;
         case 'iqd':
             sarInput.value = formatNumber(numValue / sarToIqd);
-            usdInput.value = formatNumber((numValue / sarToIqd) * sarToUsd);
+            usdInput.value = formatNumber(numValue / usdToIqd);
             break;
         case 'usd':
             sarInput.value = formatNumber(numValue / sarToUsd);
