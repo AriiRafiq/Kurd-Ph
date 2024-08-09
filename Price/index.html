@@ -11,18 +11,29 @@
         <h1 id="title">Price Converter</h1>
         <div id="settings-icon">&#9881;</div>
     </header>
-    <main>
-        <div class="converter">
-            <label for="sar">SAR:</label>
-            <input type="text" id="sar" placeholder="0.00">
-            
-            <label for="iqd">IQD:</label>
-            <input type="text" id="iqd" placeholder="0.00">
-            
-            <label for="usd">USD:</label>
-            <input type="text" id="usd" placeholder="0.00">
+    <div class="container">
+        <div class="currency-input">
+            <label for="sar">Saudi Riyal (SAR):</label>
+            <div class="input-group">
+                <input type="text" id="sar" placeholder="0.00">
+                <span>SAR</span>
+            </div>
         </div>
-    </main>
+        <div class="currency-input">
+            <label for="iqd">Iraqi Dinar (IQD):</label>
+            <div class="input-group">
+                <input type="text" id="iqd" placeholder="0.00">
+                <span>IQD</span>
+            </div>
+        </div>
+        <div class="currency-input">
+            <label for="usd">US Dollar (USD):</label>
+            <div class="input-group">
+                <input type="text" id="usd" placeholder="0.00">
+                <span>USD</span>
+            </div>
+        </div>
+    </div>
 
     <!-- Settings Modal -->
     <div id="settings-modal" class="modal">
@@ -39,8 +50,8 @@
             <input type="text" id="usdToIqd" placeholder="1501">
             
             <div class="modal-buttons">
-                <button id="save-settings">Save</button>
-                <button id="close-settings">Close</button>
+                <button id="save-btn">Save</button>
+                <button id="close-btn">Close</button>
             </div>
         </div>
     </div>
